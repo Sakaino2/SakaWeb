@@ -1,0 +1,84 @@
+---
+import HighlightCard from "../components/HighlightCard.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+---
+
+<div class="wrapper">
+  <div class="2-column">
+    <div class="service-cards">
+      <ServiceCard title="Diseño 3D" alt="modelo 3D" img="mock-img.jpeg" />
+      <ServiceCard
+        title="Diseño de Software"
+        alt="programando"
+        img="mock-img.jpeg"
+      />
+      <ServiceCard
+        title="Diseño de Videojuegos"
+        alt="videojuego"
+        img="mock-img.jpeg"
+      />
+    </div>
+    <div class="nosotros">
+      <p>
+        Somos una empresa desarrolladora de tecnología que se centra en el
+        desarrollo de software e interactividad. Manejamos proyectos de
+        videojuegos y de diseño de software a medida.
+      </p>
+    </div>
+  </div>
+  <div class="1-column">
+    <HighlightCard
+      title="Misión"
+      text="Desarrollar software interactivo a medida para empresas pequeñas y medianas"
+    />
+    <HighlightCard
+      title="Visión"
+      text="Ser conocidos en diferentes sectores como referentes para brindar soluciones tecnológicas e interactivas"
+    />
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    margin-inline: auto;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 1080px;
+    width: 100%;
+    display: grid;
+    align-items: top;
+    grid-auto-columns: 1fr;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: 1fr;
+    column-gap: 3rem;
+  }
+
+  .service-cards {
+    display: grid;
+    align-items: top;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.5rem;
+  }
+
+  .nosotros {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  p {
+    font-weight: 600;
+    padding-bottom: 30px;
+  }
+
+  @media (min-width: 800px) {
+    .wrapper {
+      grid-template-columns: 2fr 1fr;
+    }
+    .nosotros {
+      text-align: left;
+    }
+    .service-cards {
+      column-gap: 1rem;
+    }
+  }
+</style>

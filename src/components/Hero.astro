@@ -1,0 +1,61 @@
+---
+import MainCta from "./MainCta.astro";
+import Column from "../layouts/Column.astro";
+---
+
+<div class="hero-container">
+  <div class="wrap">
+    <h1 class="texto-principal">MUESTRA TU PRODUCTO DE FORMA ÚNICA</h1>
+    <p class="bajada">
+      Lleva la experiencia de vivir en tu condominio o departamento a tus
+      futuros inquilinos desde tu página web
+    </p>
+    <a class="cta" href="#prueba"><MainCta text="Prueba Ahora" /></a>
+  </div>
+</div>
+
+<style>
+  .hero-container {
+    background-color: var(--accent-yellow);
+    min-height: 600px;
+    margin-bottom: 35px;
+    display: flex;
+    padding: 0 20px;
+    padding-bottom: 100px;
+  }
+
+  .wrap {
+    margin: 0 auto;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    row-gap: 2rem;
+    text-align: right;
+    color: var(--accent-white);
+  }
+
+  .bajada {
+    max-width: 60%;
+    margin-left: auto;
+    line-height: 1.3;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .texto-principal {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 1.1;
+  }
+
+  @media (min-width: 800px) {
+    .texto-principal {
+      font-size: 50px;
+      line-height: 1.2;
+    }
+    .bajada {
+      max-width: 40%;
+    }
+  }
+</style>

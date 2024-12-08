@@ -1,0 +1,35 @@
+---
+import Column from "../layouts/Column.astro";
+
+interface Props {
+  title: string;
+  id: string;
+}
+
+const { title, id } = Astro.props;
+---
+
+<Column>
+  <div id={id}>
+    <h1 class="title">{title}</h1>
+  </div>
+</Column>
+
+<style>
+  .title {
+    text-align: center;
+    color: var(--accent-pink);
+    font-weight: 800;
+    font-size: 30px;
+  }
+  div {
+    padding-bottom: 50px;
+  }
+
+  @media (min-width: 800px) {
+    .title {
+      text-align: left;
+      font-size: 45px;
+    }
+  }
+</style>

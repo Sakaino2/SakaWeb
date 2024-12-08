@@ -1,0 +1,27 @@
+---
+
+---
+
+<div class="wrapper">
+  <div class="layout-grid">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    max-width: 1080px;
+    margin-inline: auto;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .layout-grid {
+    display: grid;
+    align-items: top;
+    grid-auto-columns: 1fr;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+</style>

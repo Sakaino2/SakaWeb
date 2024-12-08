@@ -1,0 +1,142 @@
+<div class="form">
+  <h2>¿Estás interesado? Mándanos un mensaje</h2>
+  <form action="">
+    <label for="mail">Correo:</label>
+    <input
+      class="container"
+      type="email"
+      id="mail"
+      name="mail"
+      required
+      placeholder="johndoe@mail.com"
+    />
+    <label for="asunto">Asunto:</label>
+    <input
+      class="container"
+      type="text"
+      id="asunto"
+      name="asunto"
+      required
+      placeholder="Cotización de proyecto"
+    />
+    <label for="mensaje">Mensaje:</label>
+    <textarea
+      name="mensaje"
+      class="container text-area"
+      required
+      id="mensaje"
+      placeholder="Hola..."
+      cols="30"
+      rows="10"></textarea>
+    <input class="button" type="submit" value="Enviar" />
+  </form>
+</div>
+
+<script is:inline>
+  const form = document.getElementById("form");
+  const result = document.getElementById("result");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    form.classList.add("was-validated");
+    if (!form.checkValidity()) {
+      form.querySelectorAll(":invalid")[0].focus();
+      return;
+    }
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Sending...";
+
+    fetch("", {})
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.classList.add("text-green-500");
+          result.innerHTML = json.message;
+        } else {
+          console.log(response);
+          result.classList.add("text-red-500");
+          result.innerHTML = json.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+      })
+      .then(function () {
+        form.reset();
+        form.classList.remove("was-validated");
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 5000);
+      });
+  });
+</script>
+
+<style>
+  .form {
+    padding: 40px;
+    text-align: left;
+    background: var(--accent-blue);
+    border-radius: 20px;
+    color: var(--accent-pink);
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  form {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .container {
+    font-family: "Montserrat Variable", sans-serif;
+    padding-left: 12px;
+    font-size:;
+    color: var(--accent-black);
+    border-radius: 5px;
+    min-height: 40px;
+    margin-bottom: 10px;
+    border: 0;
+  }
+
+  .button {
+    font-family: "Montserrat Variable", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 12px 35px;
+    background-color: rgba(250, 164, 189, 1);
+    color: var(--accent-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+
+  .text-area {
+    padding-top: 10px;
+  }
+
+  .button:hover {
+    background-color: rgba(250, 164, 189, 0.8);
+  }
+
+  @media (min-width: 800px) {
+    h2 {
+      text-align: left;
+    }
+  }
+</style>

@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+  gridArea: string;
+}
+
+const { href, title, body, gridArea } = Astro.props;
+---
+
+<div class="card">
+  <img src={href} alt="" />
+  <div class="text">
+    <h2>{title}</h2>
+    <p>{body}</p>
+  </div>
+</div>
+
+<style define:vars={{ gridArea }}>
+  .card {
+    padding: 2rem;
+    background: #242424;
+    border-top: 6px solid #eca1b6;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 1.5rem -0.5rem rgb(0 50 100 / 0.15);
+    display: flex;
+    justify-content: center;
+    grid-area: var(--gridArea);
+  }
+
+  .text {
+    margin-left: 2rem;
+    color: #edf0f1;
+  }
+
+  .text h2 {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .text p {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  img {
+    max-width: 80px;
+  }
+</style>

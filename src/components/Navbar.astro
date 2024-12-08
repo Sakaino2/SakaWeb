@@ -1,0 +1,145 @@
+---
+import "@fontsource-variable/montserrat";
+---
+
+<header>
+  <div class="nav-container">
+    <button
+      class="mobile-nav-toggle"
+      aria-controls="primary-navigation"
+      aria-expanded="false"
+    >
+      <span class="sr-only"></span>
+    </button>
+    <img class="logo" src="Logo-horizontal-color.png" alt="Proto Logo" />
+    <nav>
+      <ul id="primary-navigation" class="nav_links" data-visible="false">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#caracteristicas">Características</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#prueba">Prueba</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  const primaryNav = document.querySelector(".nav_links");
+  const navToggle = document.querySelector(".mobile-nav-toggle");
+
+  navToggle.addEventListener("click", () => {
+    console.log(primaryNav);
+    const visibility = primaryNav.getAttribute("data-visible");
+    if (visibility === "false") {
+      primaryNav.setAttribute("data-visible", true);
+      navToggle.setAttribute("aria-expanded", true);
+    } else {
+      primaryNav.setAttribute("data-visible", false);
+      navToggle.setAttribute("aria-expanded", false);
+    }
+    console.log(visibility);
+  });
+</script>
+
+<style>
+  li,
+  a {
+    color: var(--accent-white);
+    text-decoration: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 0px;
+    background: var(--accent-blue-gradient);
+    border-bottom: 4px solid var(--accent-pink);
+    width: 100%;
+    /* position: fixed; */
+  }
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  .logo {
+    cursor: pointer;
+    max-width: 100px;
+    margin-right: auto;
+  }
+
+  .nav-container {
+    display: flex;
+    padding: 0 20px;
+    margin: auto;
+    max-width: 1080px;
+    width: 100%;
+  }
+
+  .nav_links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  .nav_links li {
+    display: inline-block;
+    padding: 10px 10px;
+  }
+
+  .nav_links li a {
+    transition: all 0.3s ease 0s;
+  }
+
+  .nav_links li a:hover {
+    color: var(--accent-pink);
+  }
+  .cta {
+    margin-left: 20px;
+  }
+
+  @media (max-width: 35em) {
+    header {
+      position: fixed;
+    }
+
+    .nav_links {
+      z-index: 1000;
+      position: fixed;
+      inset: 0 0 0 45%;
+      gap: 20px;
+      flex-direction: column;
+      padding: min(30vh, 10rem) 2em;
+      border-left: 8px solid var(--accent-pink);
+      background: var(--accent-blue-gradient);
+      transform: translateX(100%);
+      transition: transform 350ms ease-out;
+    }
+
+    .nav_links li {
+      padding: 15px 10px;
+    }
+
+    .nav_links[data-visible="true"] {
+      transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle {
+      display: block;
+      position: absolute;
+      z-index: 9999;
+      background: url("hamburger.png");
+      background-repeat: no-repeat;
+      width: 3rem;
+      border: 0;
+      aspect-ratio: 1;
+      top: 1.8rem;
+      right: 1.8rem;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+      background-image: url("close-btn.png");
+    }
+  }
+</style>
