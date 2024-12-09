@@ -1,101 +1,24 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import CardFeatures from "../components/CardFeatures.astro";
-import AstroGame from "../components/AstroGame.astro";
 import Navbar from "../components/Navbar.astro";
+import "../styles.css";
+import Counter from "../components/counter";
 import Hero from "../components/Hero.astro";
-import ColumnNarrowLayout from "../layouts/ColumnNarrowLayout.astro";
-import CardColumnLayout from "../layouts/CardColumnLayout.astro";
-import Column from "../layouts/Column.astro";
-import SectionTitle from "../components/SectionTitle.astro";
-import Section from "../layouts/Section.astro";
-import Footer from "../components/Footer.astro";
-import AboutUsLayout from "../layouts/AboutUsLayout.astro";
-import Feature from "../components/Feature.astro";
-import Control from "../components/Control.astro";
-import ContactLayout from "../layouts/ContactLayout.astro";
-import ControlCardLayout from "../layouts/ControlCardLayout.astro";
+import About from "../components/About.astro";
+
+const projects = await getCollection("projects");
 ---
 
-<Layout title="Oinc Studios">
+<Layout title="SakaDev">
   <Navbar />
   <Hero />
-  <Section>
-    <SectionTitle title="NOSOTROS" id="nosotros" />
-    <AboutUsLayout />
-  </Section>
-  <Section>
-    <SectionTitle title="CARACTERÍSTICAS" id="caracteristicas" />
-    <CardColumnLayout>
-      <Feature
-        href="mock-img.jpeg"
-        title="Experiencia Inmersiva"
-        body="Muéstrale a tus clientes cómo sería vivir en su nuevo hogar a través de una experiencia interactiva"
-        gridArea="one"
-      />
-      <Feature
-        href="mock-img.jpeg"
-        title="Facilidad de Uso"
-        body="Utiliza controles intuitivos para la mayoría de personas y una guía dentro del juego"
-        gridArea="two"
-      />
-      <Feature
-        href="mock-img.jpeg"
-        title="Espacio Interactivo"
-        body="Permite que tus usuarios interactúen con los diferenciales de tu condominio o departamento"
-        gridArea="three"
-      />
-      <Feature
-        href="mock-img.jpeg"
-        title="Desde tu Propia Web"
-        body="Te asesoraremos con subir el proyecto para que tus clientes puedan probarlo desde sus casas"
-        gridArea="four"
-      />
-    </CardColumnLayout>
-  </Section>
-  <Section>
-    <SectionTitle title="CONTÁCTANOS" id="contacto" />
-    <ContactLayout />
-  </Section>
-  <Section>
-    <SectionTitle title="PRODUCTO DE PRUEBA" id="prueba" />
-    <Column>
-      <AstroGame />
-    </Column>
-    <ControlCardLayout>
-      <Control
-        title="Movimiento"
-        body="Utiliza las teclas W, A, S y D para moverte."
-        href="mock-img.jpeg"
-      />
-      <Control
-        title="Cámara"
-        body="Utiliza el movimiento del mouse para dirigir la cámara."
-        href="mock-img.jpeg"
-      />
-      <Control
-        title="Interactúa"
-        body="Utiliza el clic izquierdo para interactuar con el entorno."
-        href="mock-img.jpeg"
-      />
-      <Control
-        title="Abre el menú"
-        body="Utiliza la tecla escape para abrir el menú."
-        href="mock-img.jpeg"
-      />
-    </ControlCardLayout>
-    <Section />
-  </Section>
-  <Footer />
+  <About />
+  <!-- <main>
+    <h1 class="text-center text-7xl">
+      Hola soy<span class="block">Jorge Sakaino</span>
+    </h1>
+    <p></p>
+    <Counter client:load />
+  </main> -->
 </Layout>
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-</style>

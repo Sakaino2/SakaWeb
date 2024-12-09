@@ -1,7 +1,3 @@
----
-import "@fontsource-variable/montserrat";
----
-
 <header>
   <div class="nav-container">
     <button
@@ -12,12 +8,14 @@ import "@fontsource-variable/montserrat";
       <span class="sr-only"></span>
     </button>
     <img class="logo" src="Logo-horizontal-color.png" alt="Proto Logo" />
+
     <nav>
       <ul id="primary-navigation" class="nav_links" data-visible="false">
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#caracteristicas">Características</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#prueba">Prueba</a></li>
+        <li><a href="#nosotros">About</a></li>
+        <li>/</li>
+        <li><a href="#caracteristicas">Portfolio</a></li>
+        <li>/</li>
+        <li><a href="#contacto">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -56,7 +54,6 @@ import "@fontsource-variable/montserrat";
     background: var(--accent-blue-gradient);
     border-bottom: 4px solid var(--accent-pink);
     width: 100%;
-    /* position: fixed; */
   }
   .mobile-nav-toggle {
     display: none;
@@ -85,7 +82,7 @@ import "@fontsource-variable/montserrat";
 
   .nav_links li {
     display: inline-block;
-    padding: 10px 10px;
+    padding: 20px 20px 0px 20px;
   }
 
   .nav_links li a {

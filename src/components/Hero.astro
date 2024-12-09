@@ -1,16 +1,21 @@
 ---
 import MainCta from "./MainCta.astro";
-import Column from "../layouts/Column.astro";
 ---
 
 <div class="hero-container">
   <div class="wrap">
-    <h1 class="texto-principal">MUESTRA TU PRODUCTO DE FORMA ÚNICA</h1>
+    <div>
+      <p class="texto-principal">DESIGNER &</p>
+      <p><span class="bold texto-principal">DEVELOPER</span></p>
+    </div>
     <p class="bajada">
-      Lleva la experiencia de vivir en tu condominio o departamento a tus
-      futuros inquilinos desde tu página web
+      Peruvian versatile creative technologist with 5+ years of experience in
+      graphic design and 2+ years in full-stack and video game development
     </p>
-    <a class="cta" href="#prueba"><MainCta text="Prueba Ahora" /></a>
+    <div class="inline-block space-x-10">
+      <a class="cta" href="#prueba"><MainCta text="My Work" /></a>
+      <a class="cta" href="#prueba"><MainCta text="Contact Me" /></a>
+    </div>
   </div>
 </div>
 
@@ -30,32 +35,36 @@ import Column from "../layouts/Column.astro";
     display: flex;
     flex-direction: column;
     align-self: flex-end;
-    row-gap: 2rem;
+    row-gap: 1.5rem;
     text-align: right;
-    color: var(--accent-white);
+    color: var(--accent-black);
   }
 
   .bajada {
-    max-width: 60%;
+    max-width: 80%;
     margin-left: auto;
     line-height: 1.3;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .texto-principal {
-    font-weight: 800;
+    font-weight: 500;
     font-size: 40px;
     line-height: 1.1;
   }
 
+  .bold {
+    font-weight: 700;
+  }
+
   @media (min-width: 800px) {
     .texto-principal {
-      font-size: 50px;
-      line-height: 1.2;
+      font-size: 57px;
+      line-height: 1;
     }
     .bajada {
-      max-width: 40%;
+      max-width: 48%;
     }
   }
 </style>
