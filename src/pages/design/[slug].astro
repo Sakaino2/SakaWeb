@@ -1,0 +1,22 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import ProjectLayout from "../../layouts/ProjectLayout.astro"; // You might use a different layout here.
+type DesignProjects = CollectionEntry<"design-projects">[];
+
+export async function getStaticPaths() {
+  const allDesignProjects: DesignProjects =
+    await getCollection("design-projects");
+
+  return allDesignProjects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<ProjectLayout project={project}>
+  <Content />
+</ProjectLayout>

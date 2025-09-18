@@ -1,0 +1,17 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import ProjectCard from "../../components/portfolio/ProjectCard.astro";
+
+type DesignProjects = CollectionEntry<"design-projects">[];
+
+const allDesignProjects: DesignProjects =
+  await getCollection("design-projects");
+---
+
+<Layout title="Sakaweb">
+  <h1>Proyectos de Diseño</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {allDesignProjects.map((project) => <ProjectCard project={project} />)}
+  </div>
+</Layout>

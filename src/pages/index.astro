@@ -1,24 +1,10 @@
 ---
-import { getCollection } from "astro:content";
+import Hero from "@/components/home/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-import "../styles.css";
-import Counter from "../components/counter";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-
-const projects = await getCollection("projects");
 ---
 
-<Layout title="SakaDev">
-  <Navbar />
-  <Hero />
-  <About />
-  <!-- <main>
-    <h1 class="text-center text-7xl">
-      Hola soy<span class="block">Jorge Sakaino</span>
-    </h1>
-    <p></p>
-    <Counter client:load />
-  </main> -->
+<Layout title="Sakaweb">
+  <main>
+    <Hero />
+  </main>
 </Layout>
