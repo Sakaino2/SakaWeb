@@ -1,0 +1,10 @@
+---
+import Container from "../general/Container.astro";
+import SectionTitle from "../general/SectionTitle.astro";
+import { Button } from "../ui/button";
+import { SkillsCarousel } from "./SkillsCarousel";
+---
+
+<Container className="py-16">
+  <SkillsCarousel client:load />
+</Container>

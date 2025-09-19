@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
 import Container from "@/components/general/Container.astro";
 import About from "@/components/home/About.astro";
+import Skills from "@/components/home/Skills.astro";
 ---
 
 <Layout title="Sakaweb">
@@ -15,15 +16,16 @@ import About from "@/components/home/About.astro";
     >
       <a href="/development"
         ><Button variant="secondary" size="lg" className="cursor-pointer"
-          >Desarrollo</Button
+          >Proyectos de Desarrollo</Button
         >
       </a>
       <a href="/design"
         ><Button variant="secondary" size="lg" className="cursor-pointer"
-          >Diseño</Button
+          >Proyectos de Diseño</Button
         >
       </a>
     </Hero>
     <About />
+    <Skills />
   </main>
 </Layout>

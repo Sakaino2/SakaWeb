@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Header from "@/components/general/Header.astro";
 import Footer from "@/components/general/Footer.astro";
+import Container from "@/components/general/Container.astro";
+import SectionTitle from "@/components/general/SectionTitle.astro";
 
 interface Props {
   project: CollectionEntry<"dev-projects"> | CollectionEntry<"design-projects">;
@@ -48,8 +50,14 @@ const { project } = Astro.props;
           {project.data.title}
         </h1>
       </section>
+      <Container />
       <div class="container mx-auto py-8">
-        <h1>{project.data.title}</h1>
+        <div class="flex justify-between">
+          <SectionTitle>
+            {project.data.title}
+          </SectionTitle>
+          <BackButton />
+        </div>
         <slot />
       </div>
     </main>

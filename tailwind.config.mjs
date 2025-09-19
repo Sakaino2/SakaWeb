@@ -11,11 +11,13 @@ export default {
         secondary: "#2c3e50",
         background: "#ecf0f1",
         text: "#34495e",
+        primaryDark: "#3498db",
+        secondaryDark: "#2c3e50",
+        backgroundDark: "#ecf0f1",
+        textDark: "#34495e",
       },
       fontFamily: {
-        // 'sans' is the primary font, usually for body text
         sans: ["Roboto", ...defaultTheme.fontFamily.sans],
-        // 'serif' or another custom name for headings
         heading: ["Lato", ...defaultTheme.fontFamily.serif],
       },
     },

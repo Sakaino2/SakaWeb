@@ -14,7 +14,7 @@ const allDevProjects: DevProjects = await getCollection("dev-projects");
 <Layout title="Sakaweb">
   <main>
     <Container className="py-16">
-      <SectionTitle title="Proyectos de Desarrollo" />
+      <SectionTitle>Proyectos de Desarrollo</SectionTitle>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         {
           allDevProjects.map((project) => (

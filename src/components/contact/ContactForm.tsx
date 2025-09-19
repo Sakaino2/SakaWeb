@@ -6,12 +6,14 @@ import { Textarea } from "../ui/textarea";
 export function ContactForm() {
   return (
     <form
-      action="https://formspree.io/f/your_form_id"
+      action="https://formspree.io/f/mkgvdvoa"
       method="POST"
       className="space-y-4"
     >
       <div>
-        <Label htmlFor="name">Nombre</Label>
+        <Label htmlFor="name" className="mb-4">
+          Nombre
+        </Label>
         <Input
           id="name"
           name="name"
@@ -21,17 +23,21 @@ export function ContactForm() {
         />
       </div>
       <div>
-        <Label htmlFor="email">Correo</Label>
+        <Label htmlFor="email" className="mb-4">
+          Correo
+        </Label>
         <Input
           id="email"
           name="email"
           type="email"
-          placeholder="nombree@correo.com"
+          placeholder="nombre@correo.com"
           required
         />
       </div>
       <div>
-        <Label htmlFor="message">Mensaje</Label>
+        <Label htmlFor="message" className="mb-4">
+          Mensaje
+        </Label>
         <Textarea
           id="message"
           name="message"
@@ -39,7 +45,9 @@ export function ContactForm() {
           required
         />
       </div>
-      <Button type="submit">Enviar</Button>
+      <Button className="mt-4" type="submit">
+        Enviar
+      </Button>
     </form>
   );
 }

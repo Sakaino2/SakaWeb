@@ -5,14 +5,14 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 
-export function Navbar() {
+export function FooterNavbar() {
   return (
     <NavigationMenu className="text-primary">
       <NavigationMenuList>
         <NavigationMenuItem className="hover:text-primary">
           <NavigationMenuLink
             href="/"
-            className="hover:bg-background hover:border-b-secondary border-b-4 border-b-background rounded-none focus:bg-background focus:border-b-secondary active:border-b-secondary px-4 sm:px-8 pt-4 pb-2 sm:text-lg"
+            className="hover:bg-background border-b-background rounded-none focus:bg-background focus:border-b-secondary active:border-b-secondary px-4 sm:px-8 pt-4 pb-2 sm:text-lg"
           >
             Inicio
           </NavigationMenuLink>
@@ -20,7 +20,7 @@ export function Navbar() {
         <NavigationMenuItem className=" hover:text-primary">
           <NavigationMenuLink
             href="/development"
-            className="hover:bg-background hover:border-b-secondary border-b-4 border-b-background rounded-none focus:bg-background focus:border-b-secondary active:border-b-secondary px-4 sm:px-8 pt-4 pb-2 sm:text-lg"
+            className="hover:bg-background border-b-background rounded-none focus:bg-background focus:border-b-secondary active:border-b-secondary px-4 sm:px-8 pt-4 pb-2 sm:text-lg"
           >
             Desarrollo
           </NavigationMenuLink>
@@ -28,7 +28,7 @@ export function Navbar() {
         <NavigationMenuItem className=" hover:text-primary">
           <NavigationMenuLink
             href="/design"
-            className="hover:bg-background hover:border-b-secondary border-b-4 border-b-background rounded-none focus:bg-background focus:border-b-secondary active:border-b-secondary px-4 sm:px-8 pt-4 pb-2 sm:text-lg"
+            className="hover:bg-background border-b-background rounded-none focus:bg-background focus:border-b-secondary active:border-b-secondary px-4 sm:px-8 pt-4 pb-2 sm:text-lg"
           >
             Diseño
           </NavigationMenuLink>
@@ -36,7 +36,7 @@ export function Navbar() {
         <NavigationMenuItem className=" hover:text-primary">
           <NavigationMenuLink
             href="/contact"
-            className="hover:bg-background hover:border-b-secondary border-b-4 border-b-background rounded-none focus:bg-background focus:border-b-secondary active:border-b-secondary px-4 sm:px-8 pt-4 pb-2 sm:text-lg"
+            className="hover:bg-background border-b-background rounded-none focus:bg-background focus:border-b-secondary active:border-b-secondary px-4 sm:px-8 pt-4 pb-2 sm:text-lg"
           >
             Contacto
           </NavigationMenuLink>
