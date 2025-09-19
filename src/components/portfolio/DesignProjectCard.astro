@@ -1,0 +1,49 @@
+---
+import type { CollectionEntry } from "astro:content";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+import { Button } from "@/components/ui/button";
+
+// Define the Props type using CollectionEntry
+interface Props {
+  project: CollectionEntry<"dev-projects"> | CollectionEntry<"design-projects">;
+}
+
+const { project } = Astro.props;
+---
+
+<Card>
+  <CardHeader>
+    <CardTitle>{project.data.title}</CardTitle>
+    <CardDescription>{project.data.description}</CardDescription>
+    <CardAction>
+      <a href={`/design/${project.slug}`}
+        ><Button className="cursor-pointer" variant="default"
+          >Ver Proyecto</Button
+        ></a
+      ></CardAction
+    >
+  </CardHeader>
+  <CardContent>
+    <a href={`/design/${project.slug}`}>
+      <img
+        class="rounded-lg"
+        src={project.data.thumbnail}
+        alt={project.data.title}
+        transition:name={`project-image-${project.slug}`}
+        transition:persist
+      />
+    </a>
+  </CardContent>
+  <!-- <CardFooter>
+    <p>Card Footer</p>
+  </CardFooter> -->
+</Card>
