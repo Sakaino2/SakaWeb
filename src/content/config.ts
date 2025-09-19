@@ -10,6 +10,7 @@ const devProjectsCollection = defineCollection({
     githubUrl: z.string().url().optional(), // Must be a valid URL, optional
     liveUrl: z.string().url().optional(), // Must be a valid URL, optional
     thumbnail: z.string(), // The path to the thumbnail image
+    media: z.array(z.string()).optional(),
   }),
 });
 
@@ -22,6 +23,7 @@ const designProjectsCollection = defineCollection({
     software: z.array(z.string()), // E.g., 'Figma', 'Photoshop'
     link: z.string().url().optional(),
     thumbnail: z.string(),
+    media: z.array(z.string()).optional(),
   }),
 });
 

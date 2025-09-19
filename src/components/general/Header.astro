@@ -1,0 +1,13 @@
+---
+import { Navbar } from "./Navbar";
+---
+
+<header
+  class="w-full inline-flex items-end justify-between py-4 bg-background"
+  transition:persist
+>
+  <a href="/"
+    ><img src="/logo-horizontal.png" alt="logo" class="h-10 me-3 pl-4" /></a
+  >
+  <Navbar client:load />
+</header>

@@ -1,10 +1,29 @@
 ---
-import Hero from "@/components/home/Hero.astro";
+import Hero from "@/components/general/Hero.astro";
 import Layout from "../layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import Container from "@/components/general/Container.astro";
+import About from "@/components/home/About.astro";
 ---
 
 <Layout title="Sakaweb">
   <main>
-    <Hero />
+    <Hero
+      title="Diseñador & Desarrollador"
+      subtitle="Desarrollador de Videojuegos - Desarrollador Fullstack - Diseñádor Gráfico"
+      bgImage="/home/hero.jpg"
+    >
+      <a href="/development"
+        ><Button variant="secondary" size="lg" className="cursor-pointer"
+          >Desarrollo</Button
+        >
+      </a>
+      <a href="/design"
+        ><Button variant="secondary" size="lg" className="cursor-pointer"
+          >Diseño</Button
+        >
+      </a>
+    </Hero>
+    <About />
   </main>
 </Layout>

@@ -1,26 +1,27 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
-
+import { MediaCarousel } from "@/components/portfolio/MediaCarousel";
 type DevProjects = CollectionEntry<"dev-projects">[];
 
-// 1. Fetch all entries from the 'dev-projects' collection.
 export async function getStaticPaths() {
   const allDevProjects: DevProjects = await getCollection("dev-projects");
 
-  // 2. Map the entries to create an array of path objects.
   return allDevProjects.map((project) => ({
-    params: { slug: project.slug }, // 'slug' must match the filename parameter
-    props: { project }, // Pass the entire content entry as a prop
+    params: { slug: project.slug },
+    props: { project },
   }));
 }
 
-// 3. Get the project data from Astro.props.
 const { project } = Astro.props;
-// 4. Render the content.
 const { Content } = await project.render();
 ---
 
 <ProjectLayout project={project}>
   <Content />
+  {
+    project.data.media && (
+      <MediaCarousel media={project.data.media} client:load />
+    )
+  }
 </ProjectLayout>

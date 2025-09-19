@@ -1,0 +1,42 @@
+---
+import Container from "../general/Container.astro";
+import SectionTitle from "../general/SectionTitle.astro";
+import { Button } from "../ui/button";
+---
+
+<Container className="py-16">
+  <div
+    class="flex flex-col md:flex-row items-center md:items-start gap-8 max-w-5xl mx-auto"
+  >
+    <div class="flex-shrink-0">
+      <img
+        src="/cv-photo.webp"
+        alt="A professional headshot of Jorge Sakaino"
+        class="w-48 h-48 md:w-64 md:h-64 rounded-2xl object-cover shadow-lg"
+      />
+    </div>
+
+    <div class="text-justify">
+      <div class="flex justify-between">
+        <SectionTitle title="Sobre mi" />
+        <a href="/cv.pdf" download>
+          <Button className="cursor-pointer" client:load>Descargar CV</Button>
+        </a>
+      </div>
+      <p class="mt-4 text-xl text-gray-500 dark:text-gray-400">
+        Soy un egresado de la carrera de diseño gráfico del instituto ISIL y
+        diseñador de videojuegos del instituto Toulouse Lautrec. Siempre busco
+        un desarrollar mis habilidades y aportar parte de mi experiencia no
+        solamente de forma creativa, sino poder crear un buen ambiente de
+        trabajo en el que se pueda trabajar de manera eficiente.
+        <!-- I'm a passionate full-stack web and mobile developer with a love for
+        creating clean, intuitive digital experiences. My journey in tech is
+        complemented by a strong foundation in graphic design, allowing me to
+        bridge the gap between beautiful aesthetics and robust functionality.
+        I thrive on solving complex problems and am always eager to learn new
+        technologies to build innovative solutions. -->
+      </p>
+    </div>
+  </div>
+</Container>
+<!-- <section class="container mx-auto py-16 px-4 sm:px-6 lg:px-8"></section> -->

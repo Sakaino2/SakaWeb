@@ -7,28 +7,31 @@ import {
 
 export function Navbar() {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="/" className="px-4 py-2">
+    <NavigationMenu className="text-primary sm:pr-8">
+      <NavigationMenuList className="sm:gap-4">
+        <NavigationMenuItem className="hover:text-primary">
+          <NavigationMenuLink href="/" className="px-4 py-2 sm:text-lg">
             Inicio
           </NavigationMenuLink>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="/development" className="px-4 py-2">
+        <NavigationMenuItem className=" hover:text-primary">
+          <NavigationMenuLink
+            href="/development"
+            className="px-4 py-2 sm:text-lg"
+          >
             Desarrollo
           </NavigationMenuLink>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href="/design" className="px-4 py-2">
+        <NavigationMenuItem className=" hover:text-primary">
+          <NavigationMenuLink href="/design" className="px-4 py-2 sm:text-lg">
             Diseño
           </NavigationMenuLink>
         </NavigationMenuItem>
-        {/* <NavigationMenuItem>
-          <NavigationMenuLink href="/contact" className="px-4 py-2">
-            Contact
+        <NavigationMenuItem className=" hover:text-primary">
+          <NavigationMenuLink href="/contact" className="px-4 py-2 sm:text-lg">
+            Contacto
           </NavigationMenuLink>
-        </NavigationMenuItem> */}
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   );

@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import { Navbar } from "../components/general/Navbar";
 import { ClientRouter } from "astro:transitions";
+import Footer from "@/components/general/Footer.astro";
+import Header from "@/components/general/Header.astro";
 
 interface Props {
   title: string;
@@ -27,17 +29,9 @@ const { title } = Astro.props;
     <ClientRouter />
   </head>
   <body>
-    <header
-      class="w-full inline-flex items-end justify-between p-2"
-      transition:persist
-    >
-      <a href="/"
-        ><img src="/logo-horizontal.png" alt="logo" class="h-10 me-3" /></a
-      >
-
-      <Navbar client:load />
-    </header>
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 

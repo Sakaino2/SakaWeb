@@ -4,6 +4,10 @@ import { Navbar } from "../components/general/Navbar";
 import { ClientRouter } from "astro:transitions";
 import type { CollectionEntry } from "astro:content";
 import { BackButton } from "@/components/portfolio/BackButton";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
+import Header from "@/components/general/Header.astro";
+import Footer from "@/components/general/Footer.astro";
 
 interface Props {
   project: CollectionEntry<"dev-projects"> | CollectionEntry<"design-projects">;
@@ -28,13 +32,28 @@ const { project } = Astro.props;
     <ClientRouter />
   </head>
   <body>
-    <header transition:persist>
-      <BackButton client:load />
-    </header>
+    <Header />
     <main>
-      <h1>{project.data.title}</h1>
-      <slot />
+      <section
+        class="relative w-full h-96 flex items-center justify-center overflow-hidden"
+      >
+        <div
+          class="absolute inset-0 z-0 w-full h-full bg-cover bg-center"
+          style={`background-image: url('${project.data.thumbnail}');`}
+          transition:name={`project-image-${project.slug}`}
+        >
+        </div>
+        <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+        <h1 class="relative z-20 text-white text-5xl font-bold">
+          {project.data.title}
+        </h1>
+      </section>
+      <div class="container mx-auto py-8">
+        <h1>{project.data.title}</h1>
+        <slot />
+      </div>
     </main>
+    <Footer />
   </body>
 </html>
 

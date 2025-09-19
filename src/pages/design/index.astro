@@ -1,7 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
-import ProjectCard from "../../components/portfolio/ProjectCard.astro";
+import DesignProjectCard from "../../components/portfolio/DesignProjectCard.astro";
+import Hero from "@/components/general/Hero.astro";
+import Container from "@/components/general/Container.astro";
+import SectionTitle from "@/components/general/SectionTitle.astro";
 
 type DesignProjects = CollectionEntry<"design-projects">[];
 
@@ -10,8 +13,16 @@ const allDesignProjects: DesignProjects =
 ---
 
 <Layout title="Sakaweb">
-  <h1>Proyectos de Diseño</h1>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {allDesignProjects.map((project) => <ProjectCard project={project} />)}
-  </div>
+  <main>
+    <Container className="py-16">
+      <SectionTitle title="Proyectos de Diseño" />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        {
+          allDesignProjects.map((project) => (
+            <DesignProjectCard project={project} />
+          ))
+        }
+      </div>
+    </Container>
+  </main>
 </Layout>
