@@ -4,6 +4,9 @@ description: "A full-stack application for managing personal tasks."
 software: ["Photoshop", "Illustrator", "Figma", "Premiere"]
 link: "https://github.com/your-username/my-awesome-app"
 thumbnail: "/projects/design/project-1/thumbnail.jpg"
+media:
+  - "/home/hero.jpg"
+  - "/cv-photo.webp"
 ---
 
 ## Project Overview
@@ -23,10 +26,3 @@ I started by sketching wireframes and creating mockups in Figma to ensure a smoo
 ### Development Insights
 
 I faced a challenge when implementing real-time updates for multiple users. I solved this by using a WebSocket library to handle communication between the client and server efficiently.
-
-```jsx
-// This is an example of an Astro component imported directly into MDX
-import TechStack from "../../components/TechStack.astro";
-
-<TechStack tech={frontmatter.technologies} />;
-```

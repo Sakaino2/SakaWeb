@@ -1,11 +1,8 @@
 ---
 import "../styles/global.css";
-import { Navbar } from "../components/general/Navbar";
 import { ClientRouter } from "astro:transitions";
 import type { CollectionEntry } from "astro:content";
 import { BackButton } from "@/components/portfolio/BackButton";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 import Header from "@/components/general/Header.astro";
 import Footer from "@/components/general/Footer.astro";
 import Container from "@/components/general/Container.astro";
@@ -50,16 +47,15 @@ const { project } = Astro.props;
           {project.data.title}
         </h1>
       </section>
-      <Container />
-      <div class="container mx-auto py-8">
-        <div class="flex justify-between">
+      <Container>
+        <div class="flex justify-between my-8">
           <SectionTitle>
             {project.data.title}
           </SectionTitle>
-          <BackButton />
+          <BackButton client:load />
         </div>
         <slot />
-      </div>
+      </Container>
     </main>
     <Footer />
   </body>

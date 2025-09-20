@@ -7,6 +7,7 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 import { Dialog, DialogContent } from "../ui/dialog";
+import { MediaDialog } from "./MediaPreview";
 
 interface Props {
   media: string[];
@@ -16,10 +17,10 @@ const isVideo = (url: string) => /\.(mp4|mov|webm|ogg)$/i.test(url);
 
 export function MediaCarousel({ media }: Props) {
   const [open, setOpen] = useState(false);
-  const [selectedMedia, setSelectedMedia] = useState("");
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const handleMediaClick = (url: string) => {
-    setSelectedMedia(url);
+  const handleOpenDialog = (index: number) => {
+    setSelectedIndex(index);
     setOpen(true);
   };
 
@@ -38,14 +39,14 @@ export function MediaCarousel({ media }: Props) {
                     src={url}
                     controls
                     className="rounded-md object-cover w-full h-48 cursor-pointer"
-                    onClick={() => handleMediaClick(url)}
+                    onClick={() => handleOpenDialog(index)}
                   />
                 ) : (
                   <img
                     src={url}
                     alt={`Project image ${index + 1}`}
                     className="rounded-md object-cover w-full h-48 cursor-pointer"
-                    onClick={() => handleMediaClick(url)}
+                    onClick={() => handleOpenDialog(index)}
                   />
                 )}
               </div>
@@ -56,24 +57,13 @@ export function MediaCarousel({ media }: Props) {
         <CarouselNext />
       </Carousel>
 
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-4xl p-0">
-          {isVideo(selectedMedia) ? (
-            <video
-              src={selectedMedia}
-              controls
-              autoPlay
-              className="w-full h-auto object-contain"
-            />
-          ) : (
-            <img
-              src={selectedMedia}
-              alt="Full screen preview"
-              className="w-full h-auto object-contain"
-            />
-          )}
-        </DialogContent>
-      </Dialog>
+      <MediaDialog
+        index={selectedIndex}
+        selectIndex={setSelectedIndex}
+        mediaFiles={media}
+        open={open}
+        onOpenChange={setOpen}
+      />
     </div>
   );
 }

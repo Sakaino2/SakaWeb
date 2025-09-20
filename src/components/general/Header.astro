@@ -3,15 +3,16 @@ import { Navbar } from "./Navbar";
 ---
 
 <header
-  class="w-full inline-flex items-center justify-between bg-background sm:px-8"
+  class="w-full inline-flex items-center justify-between bg-background px-6 md:px-8"
   transition:persist
 >
-  <a href="/"
-    ><img
+  <a href="/">
+    <img
       src="/logo-horizontal.png"
-      alt="logo"
-      class="h-10 me-3 pl-4 mb-0"
-    /></a
-  >
-  <Navbar client:load />
+      alt="Full Logo"
+      class="hidden md:block h-8"
+    />
+    <img src="/logo.svg" alt="Icon Logo" class="block md:hidden h-8 m-2" />
+  </a>
+  <Navbar client:only="react" />
 </header>

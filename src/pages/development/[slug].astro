@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
 import { MediaCarousel } from "@/components/portfolio/MediaCarousel";
+import Prose from "@/components/general/Prose.astro";
 type DevProjects = CollectionEntry<"dev-projects">[];
 
 export async function getStaticPaths() {
@@ -18,10 +19,12 @@ const { Content } = await project.render();
 ---
 
 <ProjectLayout project={project}>
-  <Content />
-  {
+  <Prose>
+    <Content />
+  </Prose>
+  <!-- {
     project.data.media && (
       <MediaCarousel media={project.data.media} client:load />
     )
-  }
+  } -->
 </ProjectLayout>

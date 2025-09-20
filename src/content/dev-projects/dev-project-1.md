@@ -24,10 +24,3 @@ I started by sketching wireframes and creating mockups in Figma to ensure a smoo
 ### Development Insights
 
 I faced a challenge when implementing real-time updates for multiple users. I solved this by using a WebSocket library to handle communication between the client and server efficiently.
-
-```jsx
-// This is an example of an Astro component imported directly into MDX
-import TechStack from "../../components/TechStack.astro";
-
-<TechStack tech={frontmatter.technologies} />;
-```
