@@ -18,6 +18,7 @@ import {
   SiAutodeskmaya,
   SiDocker,
   SiFlutter,
+  SiGithub,
   SiGo,
   SiNodedotjs,
   SiReact,
@@ -39,9 +40,9 @@ export function SkillsCarousel() {
             <TabsTrigger value="design">Diseño</TabsTrigger>
           </TabsList>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex mt-4 justify-center items-center">
           <Carousel
-            className="w-full sm:max-w-[75vw] mt-4 items-center justify-center"
+            className="w-full sm:max-w-[75vw] items-center justify-center"
             opts={{ loop: true }}
             plugins={[
               AutoScroll({
@@ -76,9 +77,9 @@ export function SkillsCarousel() {
             <TabsTrigger value="design">Diseño</TabsTrigger>
           </TabsList>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex mt-4 justify-center items-center">
           <Carousel
-            className="w-full sm:max-w-[75vw] mt-4 items-center justify-center"
+            className="w-full sm:max-w-[75vw] items-center justify-center"
             opts={{ loop: true }}
             plugins={[
               AutoScroll({
@@ -123,6 +124,7 @@ const DevSkills: SkillCarouselItemProps[] = [
   { children: <SiAstro size={80} />, title: "Astro" },
   { children: <SiReact size={80} />, title: "React" },
   { children: <SiTailwindcss size={80} />, title: "Tailwind" },
+  { children: <SiGithub size={80} />, title: "Github" },
   { children: <SiDocker size={80} />, title: "Docker" },
   { children: <SiNodedotjs size={80} />, title: "NodeJS" },
   { children: <SiShopify size={80} />, title: "Shopify" },

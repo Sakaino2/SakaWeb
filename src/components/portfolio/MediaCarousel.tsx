@@ -6,7 +6,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../ui/carousel";
-import { Dialog, DialogContent } from "../ui/dialog";
 import { MediaDialog } from "./MediaPreview";
 
 interface Props {
@@ -25,8 +24,8 @@ export function MediaCarousel({ media }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <Carousel className="w-full max-w-4xl">
+    <div className="flex flex-col items-center justify-center">
+      <Carousel className="w-full sm:max-w-[75vw]">
         <CarouselContent className="-ml-1">
           {media.map((url, index) => (
             <CarouselItem

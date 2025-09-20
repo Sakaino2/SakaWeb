@@ -1,12 +1,10 @@
 ---
-title: "Proyecto Diseño #1"
+title: "Web - Inventariapp"
 description: "A full-stack application for managing personal tasks."
-software: ["Photoshop", "Illustrator", "Figma", "Premiere"]
-link: "https://github.com/your-username/my-awesome-app"
-thumbnail: "/projects/design/project-1/thumbnail.jpg"
-media:
-  - "/home/hero.jpg"
-  - "/cv-photo.webp"
+technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"]
+githubUrl: "https://github.com/your-username/my-awesome-app"
+liveUrl: "https://my-awesome-app.vercel.app"
+thumbnail: "/projects/dev/project-1/thumbnail.jpg"
 ---
 
 ## Project Overview

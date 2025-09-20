@@ -2,14 +2,14 @@ import { z, defineCollection } from "astro:content";
 
 // Define a schema for development projects
 const devProjectsCollection = defineCollection({
-  type: "content", // 'content' for .md/.mdx files
+  type: "content",
   schema: z.object({
     title: z.string(),
     description: z.string(),
     technologies: z.array(z.string()),
-    githubUrl: z.string().url().optional(), // Must be a valid URL, optional
-    liveUrl: z.string().url().optional(), // Must be a valid URL, optional
-    thumbnail: z.string(), // The path to the thumbnail image
+    githubUrl: z.string().url().optional(),
+    liveUrl: z.string().url().optional(),
+    thumbnail: z.string(),
     media: z.array(z.string()).optional(),
   }),
 });
@@ -20,7 +20,7 @@ const designProjectsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    software: z.array(z.string()), // E.g., 'Figma', 'Photoshop'
+    software: z.array(z.string()),
     link: z.string().url().optional(),
     thumbnail: z.string(),
     media: z.array(z.string()).optional(),

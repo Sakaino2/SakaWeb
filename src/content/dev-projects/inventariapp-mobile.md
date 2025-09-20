@@ -1,5 +1,5 @@
 ---
-title: "Proyecto Desarrollo #1"
+title: "Mobile - Inventariapp"
 description: "A full-stack application for managing personal tasks."
 technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"]
 githubUrl: "https://github.com/your-username/my-awesome-app"
