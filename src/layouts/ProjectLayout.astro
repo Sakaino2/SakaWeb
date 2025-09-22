@@ -7,6 +7,7 @@ import Header from "@/components/general/Header.astro";
 import Footer from "@/components/general/Footer.astro";
 import Container from "@/components/general/Container.astro";
 import SectionTitle from "@/components/general/SectionTitle.astro";
+import "@fontsource-variable/outfit";
 
 interface Props {
   project: CollectionEntry<"dev-projects"> | CollectionEntry<"design-projects">;
@@ -23,7 +24,7 @@ const { project } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
@@ -39,7 +40,7 @@ const { project } = Astro.props;
         <div
           class="absolute inset-0 z-0 w-full h-full bg-cover bg-center"
           style={`background-image: url('${project.data.thumbnail}');`}
-          transition:name={`project-image-${project.slug}`}
+          transition:name={`project-image-${project.id}`}
         >
         </div>
         <div class="absolute inset-0 bg-black opacity-50 z-10"></div>

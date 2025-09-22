@@ -17,8 +17,8 @@ export default {
         textDark: "#34495e",
       },
       fontFamily: {
-        sans: ["Roboto", ...defaultTheme.fontFamily.sans],
-        heading: ["Lato", ...defaultTheme.fontFamily.serif],
+        sans: ["Manrope", ...defaultTheme.fontFamily.sans],
+        heading: ["Roboto", ...defaultTheme.fontFamily.serif],
       },
     },
   },

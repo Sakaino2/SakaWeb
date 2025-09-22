@@ -1,5 +1,5 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
 import { MediaCarousel } from "@/components/portfolio/MediaCarousel";
 import Prose from "@/components/general/Prose.astro";
@@ -8,15 +8,18 @@ type DesignProjects = CollectionEntry<"design-projects">[];
 export async function getStaticPaths() {
   const allDesignProjects: DesignProjects =
     await getCollection("design-projects");
+  allDesignProjects.sort(
+    (a, b) => a.data.date.getTime() - b.data.date.getTime()
+  );
 
   return allDesignProjects.map((project) => ({
-    params: { slug: project.slug },
+    params: { slug: project.id },
     props: { project },
   }));
 }
 
 const { project } = Astro.props;
-const { Content } = await project.render();
+const { Content } = await render(project);
 ---
 
 <ProjectLayout project={project}>

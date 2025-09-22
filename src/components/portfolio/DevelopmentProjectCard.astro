@@ -24,7 +24,7 @@ const { project } = Astro.props;
     <CardTitle>{project.data.title}</CardTitle>
     <CardDescription>{project.data.description}</CardDescription>
     <CardAction>
-      <a href={`/development/${project.slug}`}
+      <a href={`/development/${project.id}`}
         ><Button className="cursor-pointer" variant="default"
           >Ver Proyecto</Button
         ></a
@@ -32,12 +32,12 @@ const { project } = Astro.props;
     >
   </CardHeader>
   <CardContent>
-    <a href={`/development/${project.slug}`}>
+    <a href={`/development/${project.id}`}>
       <img
         class="rounded-lg"
         src={project.data.thumbnail}
         alt={project.data.title}
-        transition:name={`project-image-${project.slug}`}
+        transition:name={`project-image-${project.id}`}
         transition:persist
       />
     </a>

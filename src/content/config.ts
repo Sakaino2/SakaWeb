@@ -1,8 +1,12 @@
+import { glob } from "astro/loaders";
 import { z, defineCollection } from "astro:content";
 
 // Define a schema for development projects
 const devProjectsCollection = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/*.{md,mdx}",
+    base: "src/content/dev-projects",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -11,12 +15,16 @@ const devProjectsCollection = defineCollection({
     liveUrl: z.string().url().optional(),
     thumbnail: z.string(),
     media: z.array(z.string()).optional(),
+    date: z.date(),
   }),
 });
 
 // Define a schema for design projects
 const designProjectsCollection = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/*.{md,mdx}",
+    base: "src/content/design-projects",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -24,6 +32,7 @@ const designProjectsCollection = defineCollection({
     link: z.string().url().optional(),
     thumbnail: z.string(),
     media: z.array(z.string()).optional(),
+    date: z.date(),
   }),
 });
 
