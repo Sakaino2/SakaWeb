@@ -3,27 +3,26 @@ title: "Branding - Tres Colinas"
 description: "A full-stack application for managing personal tasks."
 software: ["Photoshop", "Illustrator", "Figma", "Premiere"]
 link: "https://github.com/your-username/my-awesome-app"
-thumbnail: "/projects/design/project-1/thumbnail.jpg"
+thumbnail: "/projects/design/branding-tres-colinas/tres-colinas-logo.png"
 media:
-  - "/home/hero.jpg"
-  - "/cv-photo.webp"
+  - "/projects/design/branding-tres-colinas/tres-colinas-logo.png"
+  - "/projects/design/branding-tres-colinas/tres-colinas-logos-variantes.png"
+  - "/projects/design/branding-tres-colinas/tres-colinas-papeleria.png"
+  - "/projects/design/branding-tres-colinas/tres-colinas-tipo-color.png"
 date: 2023-08-21
+show: true
 ---
 
 ## Resumen del Proyecto
 
-This project was a personal challenge to build a robust task management system from scratch. I focused on creating a clean, intuitive user interface and a secure, scalable backend API.
+Proyecto de branding para una pequeña empresa dedicada al rubro agrario
 
 ### Características
 
-- User authentication and authorization.
-- CRUD operations for tasks (Create, Read, Update, Delete).
-- Real-time updates using WebSockets.
+- Creación de identidad visual
+- Selección de tipografía y colores
+- Creación de papelería a utilizar para presentación y empaques
 
 ### Proceso de Diseño
 
-I started by sketching wireframes and creating mockups in Figma to ensure a smooth user experience before writing any code.
-
-### Aprendizajes
-
-I faced a challenge when implementing real-time updates for multiple users. I solved this by using a WebSocket library to handle communication between the client and server efficiently.
+Se conversaron las bases del proyecto con el cliente buscando una identidad que refleje una característica de la finca en donde se encuentran que tiene tres colinas, además se buscó resaltar la imagen de lo natural en el diseño.

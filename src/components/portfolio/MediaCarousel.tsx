@@ -24,7 +24,7 @@ export function MediaCarousel({ media }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mt-8">
       <Carousel className="w-full sm:max-w-[75vw]">
         <CarouselContent className="-ml-1">
           {media.map((url, index) => (

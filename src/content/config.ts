@@ -16,6 +16,7 @@ const devProjectsCollection = defineCollection({
     thumbnail: z.string(),
     media: z.array(z.string()).optional(),
     date: z.date(),
+    show: z.boolean(),
   }),
 });
 
@@ -33,6 +34,7 @@ const designProjectsCollection = defineCollection({
     thumbnail: z.string(),
     media: z.array(z.string()).optional(),
     date: z.date(),
+    show: z.boolean(),
   }),
 });
 

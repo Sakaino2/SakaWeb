@@ -5,11 +5,15 @@ import DesignProjectCard from "../../components/portfolio/DesignProjectCard.astr
 import Hero from "@/components/general/Hero.astro";
 import Container from "@/components/general/Container.astro";
 import SectionTitle from "@/components/general/SectionTitle.astro";
+import type { DesignProject } from "@/models/collections.model";
+import { filterDesignProjects } from "@/utils/utils";
 
-type DesignProjects = CollectionEntry<"design-projects">[];
-
-const allDesignProjects: DesignProjects =
+const allDesignProjects: DesignProject[] =
   await getCollection("design-projects");
+const filteredDesignProjects = filterDesignProjects(allDesignProjects);
+filteredDesignProjects.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
 ---
 
 <Layout title="Sakaweb">
@@ -18,7 +22,7 @@ const allDesignProjects: DesignProjects =
       <SectionTitle>Proyectos de Diseño</SectionTitle>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         {
-          allDesignProjects.map((project) => (
+          filteredDesignProjects.map((project) => (
             <DesignProjectCard project={project} />
           ))
         }

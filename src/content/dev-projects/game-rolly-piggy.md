@@ -1,11 +1,12 @@
 ---
-title: "Web - Portafolio"
+title: "Juego - Rolly Piggy Rollout"
 description: "A full-stack application for managing personal tasks."
 technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"]
 githubUrl: "https://github.com/your-username/my-awesome-app"
 liveUrl: "https://my-awesome-app.vercel.app"
 thumbnail: "/projects/dev/project-1/thumbnail.jpg"
-date: 2025-09-21
+date: 2020-06-21
+show: false
 ---
 
 ## Resumen del Proyecto

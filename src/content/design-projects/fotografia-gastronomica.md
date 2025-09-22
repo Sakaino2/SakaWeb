@@ -3,27 +3,41 @@ title: "Fotografía Gastronómica"
 description: "A full-stack application for managing personal tasks."
 software: ["Photoshop", "Illustrator", "Figma", "Premiere"]
 link: "https://github.com/your-username/my-awesome-app"
-thumbnail: "/projects/design/project-1/thumbnail.jpg"
+thumbnail: "/projects/design/fotografia-gastronomica/portafolio-10.jpg"
 media:
-  - "/home/hero.jpg"
-  - "/cv-photo.webp"
+  - "/projects/design/fotografia-gastronomica/portafolio-1.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-2.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-3.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-4.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-5.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-6.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-7.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-8.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-9.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-10.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-11.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-12.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-13.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-14.jpg"
+  - "/projects/design/fotografia-gastronomica/portafolio-15.jpg"
 date: 2022-08-21
+show: true
 ---
 
 ## Resumen del Proyecto
 
-This project was a personal challenge to build a robust task management system from scratch. I focused on creating a clean, intuitive user interface and a secure, scalable backend API.
+Fotografías tomadas durante mi trabajo en Wasabi S.A.C.
 
 ### Características
 
-- User authentication and authorization.
-- CRUD operations for tasks (Create, Read, Update, Delete).
-- Real-time updates using WebSockets.
+- Fotografía profesional
+- Trabajo de iluminación
+- Composición llamativa
 
-### Proceso de Diseño
+### Proceso del proyecto
 
-I started by sketching wireframes and creating mockups in Figma to ensure a smooth user experience before writing any code.
+Se tomaron referencias de internet para buscar inspiración para la fotografía de los platos y resaltar el trabajo de los chefs.
 
 ### Aprendizajes
 
-I faced a challenge when implementing real-time updates for multiple users. I solved this by using a WebSocket library to handle communication between the client and server efficiently.
+Reforcé mis habilidades de composición y manejo de iluminación, además de las habilidades de comunicación para coordinar las sesiones y manejar un acabado diferente para cada restaurante.

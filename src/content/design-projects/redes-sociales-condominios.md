@@ -8,6 +8,7 @@ media:
   - "/home/hero.jpg"
   - "/cv-photo.webp"
 date: 2022-12-10
+show: false
 ---
 
 ## Resumen del Proyecto

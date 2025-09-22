@@ -2,13 +2,16 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import DevelopmentProjectCard from "../../components/portfolio/DevelopmentProjectCard.astro";
 import Layout from "../../layouts/Layout.astro";
-import Hero from "@/components/general/Hero.astro";
 import Container from "@/components/general/Container.astro";
 import SectionTitle from "@/components/general/SectionTitle.astro";
+import type { DevProject } from "@/models/collections.model";
+import { filterDevProjects } from "@/utils/utils";
 
-type DevProjects = CollectionEntry<"dev-projects">[];
-
-const allDevProjects: DevProjects = await getCollection("dev-projects");
+const allDevProjects: DevProject[] = await getCollection("dev-projects");
+const filteredDevProjects = filterDevProjects(allDevProjects);
+filteredDevProjects.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
 ---
 
 <Layout title="Sakaweb">
@@ -17,7 +20,7 @@ const allDevProjects: DevProjects = await getCollection("dev-projects");
       <SectionTitle>Proyectos de Desarrollo</SectionTitle>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         {
-          allDevProjects.map((project) => (
+          filteredDevProjects.map((project) => (
             <DevelopmentProjectCard project={project} />
           ))
         }

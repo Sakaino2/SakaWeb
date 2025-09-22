@@ -3,11 +3,10 @@ import { getCollection, render, type CollectionEntry } from "astro:content";
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
 import { MediaCarousel } from "@/components/portfolio/MediaCarousel";
 import Prose from "@/components/general/Prose.astro";
-type DevProjects = CollectionEntry<"dev-projects">[];
+import type { DevProject } from "@/models/collections.model";
 
 export async function getStaticPaths() {
-  const allDevProjects: DevProjects = await getCollection("dev-projects");
-  allDevProjects.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
+  const allDevProjects: DevProject[] = await getCollection("dev-projects");
 
   return allDevProjects.map((project) => ({
     params: { slug: project.id },
@@ -24,9 +23,9 @@ const { Content } = await render(project);
   <Prose>
     <Content />
   </Prose>
-  <!-- {
+  {
     project.data.media && (
       <MediaCarousel media={project.data.media} client:load />
     )
-  } -->
+  }
 </ProjectLayout>

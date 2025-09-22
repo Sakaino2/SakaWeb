@@ -3,27 +3,32 @@ title: "Redes Sociales - Restaurantes"
 description: "A full-stack application for managing personal tasks."
 software: ["Photoshop", "Illustrator", "Figma", "Premiere"]
 link: "https://github.com/your-username/my-awesome-app"
-thumbnail: "/projects/design/project-1/thumbnail.jpg"
+thumbnail: "/projects/design/redes-sociales-restaurantes/hanzo-1.jpg"
 media:
-  - "/home/hero.jpg"
-  - "/cv-photo.webp"
+  - "/projects/design/redes-sociales-restaurantes/hanzo-1.jpg"
+  - "/projects/design/redes-sociales-restaurantes/katsuya-1.jpg"
+  - "/projects/design/redes-sociales-restaurantes/katsuya-2.jpg"
+  - "/projects/design/redes-sociales-restaurantes/katsuya-3.jpg"
+  - "/projects/design/redes-sociales-restaurantes/tom-1.jpg"
+  - "/projects/design/redes-sociales-restaurantes/wasabi-1.jpg"
 date: 2022-08-21
+show: true
 ---
 
 ## Resumen del Proyecto
 
-This project was a personal challenge to build a robust task management system from scratch. I focused on creating a clean, intuitive user interface and a secure, scalable backend API.
+Algunas piezas diseñadas durante mi trabajo en Wasabi S.A.C. para los diversos restaurantes que manejaba la empresa.
 
 ### Características
 
-- User authentication and authorization.
-- CRUD operations for tasks (Create, Read, Update, Delete).
-- Real-time updates using WebSockets.
+- Diseño de piezas publicitarias para redes sociales
+- Edición de videos de eventos, promociones y otros motivos
+- Diseño de identidad visual para restaurantes diversos
 
 ### Proceso de Diseño
 
-I started by sketching wireframes and creating mockups in Figma to ensure a smooth user experience before writing any code.
+Establecer una identidad de marca para cada restaurante y mantenerla en cada pieza.
 
 ### Aprendizajes
 
-I faced a challenge when implementing real-time updates for multiple users. I solved this by using a WebSocket library to handle communication between the client and server efficiently.
+Diseñar una variedad de identidades de marca para las piezas publicitarias que representen las características de cada restaurante ya que al ser de diferentes tipos de comida, necesitaban de una línea visual diferente.

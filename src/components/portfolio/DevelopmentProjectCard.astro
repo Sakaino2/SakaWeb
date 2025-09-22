@@ -32,9 +32,12 @@ const { project } = Astro.props;
     >
   </CardHeader>
   <CardContent>
-    <a href={`/development/${project.id}`}>
+    <a
+      class="flex items-center justify-center"
+      href={`/development/${project.id}`}
+    >
       <img
-        class="rounded-lg"
+        class="rounded-lg object-cover max-h-48"
         src={project.data.thumbnail}
         alt={project.data.title}
         transition:name={`project-image-${project.id}`}
