@@ -1,7 +1,7 @@
 ---
-title: "Backend - Inventariapp"
-description: "A full-stack application for managing personal tasks."
-technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"]
+title: "Backend - InventariApp"
+description: "Aplicación REST de registro de inventario anual para instituciones públicas"
+technologies: ["Golang", "PostgreSQL"]
 githubUrl: "https://github.com/your-username/my-awesome-app"
 liveUrl: "https://my-awesome-app.vercel.app"
 thumbnail: "/projects/dev/backend-inventariapp/login.webp"
@@ -16,15 +16,17 @@ show: true
 
 ## Resumen del Proyecto
 
-Proyecto trabajado para la Municipalidad de Lima que consistía en la creación de una API a medida basada en Go encargada de realizar el inventario anual, generando así una API que tenga posibilidad de mejorarse en el tiempo.
+Proyecto trabajado para la Municipalidad de Lima y el INPE que consistía en la creación de una API a medida basada en Go encargada de realizar el inventario anual, generando así una API que tenga posibilidad de mejorarse en el tiempo.
 
 ### Características
 
 - Autenticación de usuarios.
 - Operaciones CRUD (Create, Read, Update, Delete).
-- Generación de PDFs.
+- Generación de documentos en PDFs.
+- Almacenamiento de datos recolectados en base de datos PostgreSQL.
+- Almacenamiento de imágenes en un S3 Storage.
+- Generación de reportes en formatos DOCX, CSV y XLSX.
 - Implementación de aplicación en VPS.
-- Implementación de almacenamiento de imágenes.
 
 ### Proceso del Proyecto
 

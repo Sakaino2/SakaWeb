@@ -1,7 +1,7 @@
 ---
 title: "Branding - Tres Colinas"
-description: "A full-stack application for managing personal tasks."
-software: ["Photoshop", "Illustrator", "Figma", "Premiere"]
+description: "Branding para una pequeña empresa de venta de productos agrícolas orgánicos"
+software: ["Illustrator"]
 link: "https://github.com/your-username/my-awesome-app"
 thumbnail: "/projects/design/branding-tres-colinas/tres-colinas-logo.png"
 media:

@@ -1,7 +1,7 @@
 ---
 title: "Redes Sociales - Restaurantes"
-description: "A full-stack application for managing personal tasks."
-software: ["Photoshop", "Illustrator", "Figma", "Premiere"]
+description: "Diseño de piezas gráficas para redes sociales para restaurantes"
+software: ["Photoshop", "Illustrator"]
 link: "https://github.com/your-username/my-awesome-app"
 thumbnail: "/projects/design/redes-sociales-restaurantes/hanzo-1.jpg"
 media:

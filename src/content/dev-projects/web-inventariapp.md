@@ -1,7 +1,7 @@
 ---
-title: "Web - Inventariapp"
-description: "A full-stack application for managing personal tasks."
-technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"]
+title: "Web - InventariApp"
+description: "Interfaz web para aplicación de registro de inventario anual para instituciones públicas"
+technologies: ["TypeScript", "Astro", "React", "Tailwind CSS"]
 githubUrl: "https://github.com/your-username/my-awesome-app"
 liveUrl: "https://my-awesome-app.vercel.app"
 thumbnail: "/projects/dev/frontend-inventariapp/log-in.webp"
@@ -24,8 +24,10 @@ Proyecto trabajado para la Municipalidad de Lima que consistía en la creación 
 ### Características
 
 - Autenticación de usuarios.
-- Resúmenes de avance del inventario a través de gráficos
-- Descarga de reportes
+- Vistas restringidas por roles.
+- Validación de ingreso de datos.
+- Resúmenes de avance del inventario a través de la implementación de un dashboard.
+- Descarga de reportes.
 
 ### Proceso del Proyecto
 

@@ -20,13 +20,26 @@ export function MediaDialog({
   open,
   onOpenChange,
 }: MediaDialogProps) {
-  // Functions to navigate
   const handleNext = () => {
-    selectIndex(index + 1);
+    let nextIndex: number;
+    if (index + 1 >= mediaFiles.length) {
+      nextIndex = 0;
+    } else {
+      nextIndex = index + 1;
+    }
+
+    selectIndex(nextIndex);
   };
 
   const handlePrevious = () => {
-    selectIndex(index - 1);
+    let previousIndex: number;
+    if (index - 1 < 0) {
+      previousIndex = mediaFiles.length - 1;
+    } else {
+      previousIndex = index - 1;
+    }
+
+    selectIndex(previousIndex);
   };
 
   return (

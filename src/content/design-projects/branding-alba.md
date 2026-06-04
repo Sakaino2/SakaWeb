@@ -1,6 +1,6 @@
 ---
 title: "Branding - Alba"
-description: "A full-stack application for managing personal tasks."
+description: "Proyecto de branding"
 software: ["Photoshop", "Illustrator", "Figma", "Premiere"]
 link: "https://github.com/your-username/my-awesome-app"
 thumbnail: "/projects/design/project-1/thumbnail.jpg"

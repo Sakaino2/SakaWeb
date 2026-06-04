@@ -1,7 +1,7 @@
 ---
-title: "Mobile - Inventariapp"
-description: "A full-stack application for managing personal tasks."
-technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"]
+title: "Mobile - InventariApp"
+description: "Interfaz mobile para uso de inventariadores para aplicación de registro de inventario anual para instituciones públicas"
+technologies: ["Flutter", "Dart"]
 githubUrl: "https://github.com/your-username/my-awesome-app"
 liveUrl: "https://my-awesome-app.vercel.app"
 thumbnail: "/projects/dev/mobile-inventariapp/login.webp"
@@ -24,6 +24,9 @@ Proyecto trabajado para la Municipalidad de Lima que consistía en la creación 
 - Autenticación de usuarios.
 - Creación de folios en los que se registrarían los bienes.
 - Búsqueda y registro de bienes.
+- Búsqueda con escaneo de códigos de barras.
+- Toma de fotos para ser subidas al backend.
+- Modo offline con sincronización de datos.
 
 ### Proceso del Proyecto
 

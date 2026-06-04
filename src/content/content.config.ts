@@ -1,7 +1,7 @@
 import { glob } from "astro/loaders";
-import { z, defineCollection } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 
-// Define a schema for development projects
 const devProjectsCollection = defineCollection({
   loader: glob({
     pattern: "**/*.{md,mdx}",
@@ -11,8 +11,8 @@ const devProjectsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     technologies: z.array(z.string()),
-    githubUrl: z.string().url().optional(),
-    liveUrl: z.string().url().optional(),
+    githubUrl: z.url().optional(),
+    liveUrl: z.url().optional(),
     thumbnail: z.string(),
     media: z.array(z.string()).optional(),
     date: z.date(),
@@ -20,7 +20,6 @@ const devProjectsCollection = defineCollection({
   }),
 });
 
-// Define a schema for design projects
 const designProjectsCollection = defineCollection({
   loader: glob({
     pattern: "**/*.{md,mdx}",
@@ -30,7 +29,7 @@ const designProjectsCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     software: z.array(z.string()),
-    link: z.string().url().optional(),
+    link: z.url().optional(),
     thumbnail: z.string(),
     media: z.array(z.string()).optional(),
     date: z.date(),
@@ -38,7 +37,6 @@ const designProjectsCollection = defineCollection({
   }),
 });
 
-// Export a single 'collections' object to register them
 export const collections = {
   "dev-projects": devProjectsCollection,
   "design-projects": designProjectsCollection,

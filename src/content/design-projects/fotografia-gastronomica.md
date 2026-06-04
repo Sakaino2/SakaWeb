@@ -1,7 +1,7 @@
 ---
 title: "Fotografía Gastronómica"
-description: "A full-stack application for managing personal tasks."
-software: ["Photoshop", "Illustrator", "Figma", "Premiere"]
+description: "Proyectos de fotografía gastronómica"
+software: ["Photoshop", "Lightroom"]
 link: "https://github.com/your-username/my-awesome-app"
 thumbnail: "/projects/design/fotografia-gastronomica/portafolio-10.jpg"
 media:
