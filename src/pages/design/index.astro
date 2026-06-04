@@ -1,8 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import DesignProjectCard from "../../components/portfolio/DesignProjectCard.astro";
-import Hero from "@/components/general/Hero.astro";
 import Container from "@/components/general/Container.astro";
 import SectionTitle from "@/components/general/SectionTitle.astro";
 import type { DesignProject } from "@/models/collections.model";
@@ -12,7 +11,7 @@ const allDesignProjects: DesignProject[] =
   await getCollection("design-projects");
 const filteredDesignProjects = filterDesignProjects(allDesignProjects);
 filteredDesignProjects.sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
 ---
 

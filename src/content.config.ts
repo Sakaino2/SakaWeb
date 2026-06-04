@@ -4,8 +4,8 @@ import { z } from "astro/zod";
 
 const devProjectsCollection = defineCollection({
   loader: glob({
-    pattern: "**/*.{md,mdx}",
-    base: "src/content/dev-projects",
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/data/dev-projects",
   }),
   schema: z.object({
     title: z.string(),
@@ -22,8 +22,8 @@ const devProjectsCollection = defineCollection({
 
 const designProjectsCollection = defineCollection({
   loader: glob({
-    pattern: "**/*.{md,mdx}",
-    base: "src/content/design-projects",
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/data/design-projects",
   }),
   schema: z.object({
     title: z.string(),
