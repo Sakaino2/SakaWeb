@@ -1,4 +1,3 @@
-// tailwind.config.mjs
 import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
@@ -15,10 +14,6 @@ export default {
         secondaryDark: "#2c3e50",
         backgroundDark: "#ecf0f1",
         textDark: "#34495e",
-      },
-      fontFamily: {
-        sans: ["Manrope", ...defaultTheme.fontFamily.sans],
-        heading: ["Roboto", ...defaultTheme.fontFamily.serif],
       },
     },
   },

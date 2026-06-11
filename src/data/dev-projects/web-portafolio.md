@@ -1,28 +1,34 @@
 ---
 title: "Web - Portafolio"
-description: "A full-stack application for managing personal tasks."
-technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"]
+description: "Portafolio web responsivo en el que se muestran proyectos realizados"
+technologies: ["React", "Astro", "Tailwind"]
 githubUrl: "https://github.com/your-username/my-awesome-app"
-liveUrl: "https://my-awesome-app.vercel.app"
-thumbnail: "/projects/dev/project-1/thumbnail.jpg"
+liveUrl: "https://sakadev.oinc-games.com/"
+thumbnail: "/projects/dev/web-portfolio/project-cards.webp"
+media:
+  - "/projects/dev/web-portfolio/home.webp"
+  - "/projects/dev/web-portfolio/about.webp"
+  - "/projects/dev/web-portfolio/contact.webp"
+  - "/projects/dev/web-portfolio/project-cards.webp"
+  - "/projects/dev/web-portfolio/project-overview.webp"
 date: 2025-09-21
-show: false
+show: true
 ---
 
 ## Resumen del Proyecto
 
-This project was a personal challenge to build a robust task management system from scratch. I focused on creating a clean, intuitive user interface and a secure, scalable backend API.
+Proyecto personal de portafolio web responsivo utilizando Astro y React (Shadcn) para mostrar proyectos personales utilizando collecciones de contenido de Astro.
 
 ### Características
 
-- User authentication and authorization.
-- CRUD operations for tasks (Create, Read, Update, Delete).
-- Real-time updates using WebSockets.
+- Uso de collecciones de contenido de Astro.
+- Uso de Shadcn para diseño de componentes.
+- Uso de Tailwind para estilos.
 
 ### Proceso de Diseño
 
-I started by sketching wireframes and creating mockups in Figma to ensure a smooth user experience before writing any code.
+Inicié diseñando un wireframe sencillo y listé los componentes necesarios que necesitaría para iniciar la producción utilizando la librería Shadcn para agilizar el proceso de implementación.
 
 ### Aprendizajes
 
-I faced a challenge when implementing real-time updates for multiple users. I solved this by using a WebSocket library to handle communication between the client and server efficiently.
+Uso eficiente de librerías para usar de base para agilizar el desarrollo.

@@ -63,7 +63,7 @@ export function MediaDialog({
 
           <Button
             onClick={handlePrevious}
-            variant="ghost"
+            variant="secondary"
             size="icon"
             className="absolute left-4 top-1/2 -translate-y-1/2"
           >
@@ -72,7 +72,7 @@ export function MediaDialog({
 
           <Button
             onClick={handleNext}
-            variant="ghost"
+            variant="secondary"
             size="icon"
             className="absolute right-4 top-1/2 -translate-y-1/2"
           >
