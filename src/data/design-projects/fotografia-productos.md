@@ -3,7 +3,7 @@ title: "Fotografía de Productos"
 description: "A full-stack application for managing personal tasks."
 software: ["Photoshop", "Illustrator", "Figma", "Premiere"]
 link: "https://github.com/your-username/my-awesome-app"
-thumbnail: "/projects/design/project-1/thumbnail.jpg"
+thumbnail: "/projects/design/fotografia-gastronomica/portafolio-10.webp"
 media:
   - "/home/hero.jpg"
   - "/cv-photo.webp"
@@ -17,9 +17,9 @@ This project was a personal challenge to build a robust task management system f
 
 ### Características
 
-- User authentication and authorization.
-- CRUD operations for tasks (Create, Read, Update, Delete).
-- Real-time updates using WebSockets.
+- Fotografía profesional
+- Trabajo de iluminación
+- Composición llamativa
 
 ### Proceso de Diseño
 

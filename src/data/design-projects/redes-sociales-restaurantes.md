@@ -3,14 +3,14 @@ title: "Redes Sociales - Restaurantes"
 description: "Diseño de piezas gráficas para redes sociales para restaurantes"
 software: ["Photoshop", "Illustrator"]
 link: "https://github.com/your-username/my-awesome-app"
-thumbnail: "/projects/design/redes-sociales-restaurantes/hanzo-1.jpg"
+thumbnail: "/projects/design/redes-sociales-restaurantes/hanzo-1.webp"
 media:
-  - "/projects/design/redes-sociales-restaurantes/hanzo-1.jpg"
-  - "/projects/design/redes-sociales-restaurantes/katsuya-1.jpg"
-  - "/projects/design/redes-sociales-restaurantes/katsuya-2.jpg"
-  - "/projects/design/redes-sociales-restaurantes/katsuya-3.jpg"
-  - "/projects/design/redes-sociales-restaurantes/tom-1.jpg"
-  - "/projects/design/redes-sociales-restaurantes/wasabi-1.jpg"
+  - "/projects/design/redes-sociales-restaurantes/hanzo-1.webp"
+  - "/projects/design/redes-sociales-restaurantes/katsuya-1.webp"
+  - "/projects/design/redes-sociales-restaurantes/katsuya-2.webp"
+  - "/projects/design/redes-sociales-restaurantes/katsuya-3.webp"
+  - "/projects/design/redes-sociales-restaurantes/tom-1.webp"
+  - "/projects/design/redes-sociales-restaurantes/wasabi-1.webp"
 date: 2022-08-21
 show: true
 ---
