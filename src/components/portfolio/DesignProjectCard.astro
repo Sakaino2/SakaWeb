@@ -5,14 +5,12 @@ import {
   CardAction,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
 
-// Define the Props type using CollectionEntry
 interface Props {
   project: CollectionEntry<"design-projects">;
 }
@@ -25,12 +23,12 @@ const { project } = Astro.props;
     <CardTitle>{project.data.title}</CardTitle>
     <CardDescription>{project.data.description}</CardDescription>
     <CardAction>
-      <a href={`/design/${project.id}`}
-        ><Button className="cursor-pointer" variant="default"
-          >Ver Proyecto</Button
-        ></a
-      ></CardAction
-    >
+      <a href={`/design/${project.id}`}>
+        <Button className="cursor-pointer" variant="default">
+          Ver Proyecto
+        </Button>
+      </a>
+    </CardAction>
   </CardHeader>
   <CardContent>
     <a class="flex items-center justify-center" href={`/design/${project.id}`}>
@@ -43,7 +41,4 @@ const { project } = Astro.props;
       />
     </a>
   </CardContent>
-  <!-- <CardFooter>
-    <p>Card Footer</p>
-  </CardFooter> -->
 </Card>

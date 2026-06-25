@@ -8,11 +8,6 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { ReactNode } from "react";
 import {
-  SiAdobeaftereffects,
-  SiAdobeillustrator,
-  SiAdobeindesign,
-  SiAdobephotoshop,
-  SiAdobepremierepro,
   SiAseprite,
   SiAstro,
   SiAutodeskmaya,
@@ -25,6 +20,13 @@ import {
   SiShopify,
   SiTailwindcss,
 } from "react-icons/si";
+import {
+  TbBrandAdobeAfterEffect,
+  TbBrandAdobeIllustrator,
+  TbBrandAdobeIndesign,
+  TbBrandAdobePhotoshop,
+  TbBrandAdobePremier,
+} from "react-icons/tb";
 import AutoScroll from "embla-carousel-auto-scroll";
 
 export function SkillsCarousel() {
@@ -116,23 +118,23 @@ const IconSizeStyle = "w-12 h-12 md:w-18 md:h-18 lg:w-22 lg:h-22";
 
 const DesignSkills: SkillCarouselItemProps[] = [
   {
-    children: <SiAdobeaftereffects className={IconSizeStyle} />,
+    children: <TbBrandAdobeAfterEffect className={IconSizeStyle} />,
     title: "Adobe After Effect",
   },
   {
-    children: <SiAdobeillustrator className={IconSizeStyle} />,
+    children: <TbBrandAdobeIllustrator className={IconSizeStyle} />,
     title: "Adobe Illustrator",
   },
   {
-    children: <SiAdobephotoshop className={IconSizeStyle} />,
+    children: <TbBrandAdobePhotoshop className={IconSizeStyle} />,
     title: "Adobe Photoshop",
   },
   {
-    children: <SiAdobepremierepro className={IconSizeStyle} />,
+    children: <TbBrandAdobePremier className={IconSizeStyle} />,
     title: "Adobe Premiere",
   },
   {
-    children: <SiAdobeindesign className={IconSizeStyle} />,
+    children: <TbBrandAdobeIndesign className={IconSizeStyle} />,
     title: "Adobe InDesign",
   },
   { children: <SiAseprite className={IconSizeStyle} />, title: "Aseprite" },

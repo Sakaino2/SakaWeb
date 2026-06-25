@@ -5,18 +5,13 @@ import {
   CardAction,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
 
-interface Props {
-  project: CollectionEntry<"dev-projects">;
-}
-
-const { project } = Astro.props;
+const { project } = Astro.props as { project: CollectionEntry<"dev-projects"> };
 ---
 
 <Card>
@@ -24,12 +19,12 @@ const { project } = Astro.props;
     <CardTitle>{project.data.title}</CardTitle>
     <CardDescription>{project.data.description}</CardDescription>
     <CardAction>
-      <a href={`/development/${project.id}`}
-        ><Button className="cursor-pointer" variant="default"
-          >Ver Proyecto</Button
-        ></a
-      ></CardAction
-    >
+      <a href={`/development/${project.id}`}>
+        <Button className="cursor-pointer" variant="default">
+          Ver Proyecto
+        </Button>
+      </a>
+    </CardAction>
   </CardHeader>
   <CardContent>
     <a
@@ -45,7 +40,4 @@ const { project } = Astro.props;
       />
     </a>
   </CardContent>
-  <!-- <CardFooter>
-    <p>Card Footer</p>
-  </CardFooter> -->
 </Card>
