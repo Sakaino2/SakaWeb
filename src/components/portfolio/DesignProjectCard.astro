@@ -5,11 +5,13 @@ import {
   CardAction,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
+import { SkillBadge } from "./SkillBadge";
 
 interface Props {
   project: CollectionEntry<"design-projects">;
@@ -18,10 +20,10 @@ interface Props {
 const { project } = Astro.props;
 ---
 
-<Card>
+<Card className="gap-4">
   <CardHeader>
     <CardTitle>{project.data.title}</CardTitle>
-    <CardDescription>{project.data.description}</CardDescription>
+    <CardDescription> {project.data.description}</CardDescription>
     <CardAction>
       <a href={`/design/${project.id}`}>
         <Button className="cursor-pointer" variant="default">
@@ -31,6 +33,9 @@ const { project } = Astro.props;
     </CardAction>
   </CardHeader>
   <CardContent>
+    <div class="flex flex-wrap gap-2 mb-4">
+      {project.data.software.map((label) => <SkillBadge label={label} />)}
+    </div>
     <a class="flex items-center justify-center" href={`/design/${project.id}`}>
       <img
         class="rounded-lg object-cover max-h-48"

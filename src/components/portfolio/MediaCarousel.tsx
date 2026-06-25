@@ -44,11 +44,9 @@ export function MediaCarousel({ media }: Props) {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     ) : (
-                      /* Fallback placeholder background for Vimeo or failed hooks */
                       <div className="w-full h-full bg-linear-to-tr from-slate-800 to-slate-900 flex items-center justify-center" />
                     )}
 
-                    {/* Dark overlay & Play icon button overlay */}
                     <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
                       <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white/90 text-slate-900 shadow-md group-hover:bg-red-600 group-hover:text-white transition-all transform group-hover:scale-110">
                         <span className="ml-1 text-xl">▶</span>

@@ -10,11 +10,12 @@ import {
 } from "@/components/ui/card";
 
 import { Button } from "@/components/ui/button";
+import { SkillBadge } from "./SkillBadge";
 
 const { project } = Astro.props as { project: CollectionEntry<"dev-projects"> };
 ---
 
-<Card>
+<Card className="gap-4">
   <CardHeader>
     <CardTitle>{project.data.title}</CardTitle>
     <CardDescription>{project.data.description}</CardDescription>
@@ -27,6 +28,9 @@ const { project } = Astro.props as { project: CollectionEntry<"dev-projects"> };
     </CardAction>
   </CardHeader>
   <CardContent>
+    <div class="flex flex-wrap gap-2 mb-4">
+      {project.data.technologies.map((label) => <SkillBadge label={label} />)}
+    </div>
     <a
       class="flex items-center justify-center"
       href={`/development/${project.id}`}
