@@ -15,6 +15,7 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       name: "Outfit",
       cssVariable: "--font-outfit",
+      weights: ["400 700"],
     },
   ],
 });
