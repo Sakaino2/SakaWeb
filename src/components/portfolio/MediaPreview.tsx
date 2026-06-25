@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { getEmbedUrl, isYouTube } from "@/lib/utils";
 
 interface MediaDialogProps {
   mediaFiles: string[];
@@ -11,8 +11,6 @@ interface MediaDialogProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const isVideo = (url: string) => /\.(mp4|mov|webm|ogg)$/i.test(url);
-
 export function MediaDialog({
   mediaFiles,
   index,
@@ -20,6 +18,8 @@ export function MediaDialog({
   open,
   onOpenChange,
 }: MediaDialogProps) {
+  const currentUrl = mediaFiles[index];
+
   const handleNext = () => {
     let nextIndex: number;
     if (index + 1 >= mediaFiles.length) {
@@ -44,18 +44,22 @@ export function MediaDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="p-0 border-none bg-transparent max-w-full sm:max-w-[70vw]">
+      <DialogContent className="p-0 border-none bg-transparent max-w-full sm:max-w-[85vw] md:max-w-[80vw]">
         <div className="relative">
-          {isVideo(mediaFiles[index]) ? (
-            <video
-              src={mediaFiles[index]}
-              controls
-              autoPlay
-              className="w-full h-auto object-contain max-h-[80vh] rounded-lg"
-            />
-          ) : (
+          {isYouTube(currentUrl) && (
+            <div className="w-full aspect-video rounded-lg overflow-hidden bg-black shadow-2xl max-h-[85vh]">
+              <iframe
+                src={`${getEmbedUrl(currentUrl)}?autoplay=1`}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          )}
+
+          {!isYouTube(currentUrl) && (
             <img
-              src={mediaFiles[index]}
+              src={currentUrl}
               alt={`Media ${index + 1}`}
               className="w-full h-auto object-contain max-h-[80vh] rounded-lg"
             />

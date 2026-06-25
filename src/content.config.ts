@@ -32,6 +32,7 @@ const designProjectsCollection = defineCollection({
     link: z.url().optional(),
     thumbnail: z.string(),
     media: z.array(z.string()).optional(),
+    video: z.array(z.url()).optional(),
     date: z.date(),
     show: z.boolean(),
   }),
