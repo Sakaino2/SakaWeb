@@ -17,7 +17,7 @@ const homeHref = locale === defaultLocale ? `/es` : `/${locale}`;
   lang={locale}
 >
   <div class="flex flex-col items-center justify-center gap-6 py-32 text-center">
-    <h1 class="text-6xl font-bold tracking-tight text-primary">404</h1>
+    <h1 class="text-6xl font-bold tracking-tight text-[#0e6a6c]">404</h1>
     <p class="text-lg text-muted-foreground">{t(locale, "notFound.body")}</p>
     <a href={homeHref}>
       <Button variant="secondary" size="lg" className="cursor-pointer">

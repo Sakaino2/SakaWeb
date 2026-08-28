@@ -30,7 +30,7 @@ export function Navbar({ lang: initialLang }: NavbarProps) {
 
   return (
     <>
-      <NavigationMenu className="hidden md:flex text-primary">
+      <NavigationMenu className="hidden md:flex text-foreground">
         <NavigationMenuList>
           {items.map((item) => (
             <NavigationMenuItem key={item.href} className="hover:text-primary">

@@ -53,7 +53,7 @@ export function SkillsCarousel({ lang: initialLang }: SkillsCarouselProps) {
   return (
     <Tabs defaultValue="dev" onValueChange={setActiveTab} className="w-full">
       <div className="flex flex-col sm:flex-row justify-between">
-        <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl dark:text-gray-100">
+        <h2 className="text-3xl font-bold tracking-tight text-[#0e6a6c] sm:text-4xl dark:text-gray-100">
           {activeTab === "dev"
             ? t(lang, "skills.dev.section")
             : t(lang, "skills.design.section")}

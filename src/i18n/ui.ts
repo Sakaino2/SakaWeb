@@ -13,6 +13,8 @@ export const es = {
   "hero.title": "Desarrollador & Diseñador",
   "hero.subtitle":
     "Desarrollador de Videojuegos - Desarrollador Fullstack - Diseñador Gráfico",
+  "hero.hook":
+    "Creo experiencias digitales intuitivas que unen la funcionalidad y lo estético",
   "hero.cta.development": "Proyectos de Desarrollo",
   "hero.cta.design": "Proyectos de Diseño",
 
@@ -30,6 +32,13 @@ export const es = {
   "skills.design.section": "Programas / Herramientas",
   "skills.tab.dev": "Desarrollo",
   "skills.tab.design": "Diseño",
+
+  "experience.title": "Experiencia",
+  "experience.section": "Experiencia Laboral",
+  "experience.present": "Presente",
+  "experience.roleAt": "en",
+  "education.title": "Educación",
+  "education.section": "Formación Académica",
 
   "contact.metaTitle": "Contacto — Sakaweb",
   "contact.metaDescription":
@@ -100,6 +109,8 @@ const en: Record<UIKey, string> = {
   "hero.title": "Developer & Designer",
   "hero.subtitle":
     "Game Developer - Fullstack Developer - Graphic Designer",
+  "hero.hook":
+    "I craft intuitive digital experiences that bridge functionality and aesthetics",
   "hero.cta.development": "Development Projects",
   "hero.cta.design": "Design Projects",
 
@@ -117,6 +128,13 @@ const en: Record<UIKey, string> = {
   "skills.design.section": "Programs / Tools",
   "skills.tab.dev": "Development",
   "skills.tab.design": "Design",
+
+  "experience.title": "Experience",
+  "experience.section": "Work Experience",
+  "experience.present": "Present",
+  "experience.roleAt": "at",
+  "education.title": "Education",
+  "education.section": "Education",
 
   "contact.metaTitle": "Contact — Sakaweb",
   "contact.metaDescription":

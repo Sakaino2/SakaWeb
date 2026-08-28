@@ -22,7 +22,7 @@ export function FooterNavbar({ lang: initialLang }: FooterNavbarProps) {
   ];
 
   return (
-    <NavigationMenu className="text-primary">
+    <NavigationMenu className="text-foreground">
       <NavigationMenuList className="gap-0 lg:gap-1">
         {items.map((item) => (
           <NavigationMenuItem key={item.href} className="hover:text-primary">

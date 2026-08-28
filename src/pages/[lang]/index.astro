@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Hero from "@/components/general/Hero.astro";
 import About from "@/components/home/About.astro";
+import Career from "@/components/home/Career.astro";
 import Skills from "@/components/home/Skills.astro";
 import { Button } from "@/components/ui/button";
 import { t } from "@/i18n";
@@ -28,6 +29,7 @@ const lang = isLocale(Astro.params.lang as string)
   <Hero
     title={t(lang, "hero.title")}
     subtitle={t(lang, "hero.subtitle")}
+    hook={t(lang, "hero.hook")}
     bgImage="/home/hero.webp"
   >
     <a href={`/${lang}/development`}
@@ -42,5 +44,6 @@ const lang = isLocale(Astro.params.lang as string)
     </a>
   </Hero>
   <About lang={lang} />
+  <Career lang={lang} />
   <Skills lang={lang} />
 </Layout>

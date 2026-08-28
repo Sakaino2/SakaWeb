@@ -26,7 +26,7 @@ function localeHref(code: string, currentPath: string): string {
         aria-current={code === lang ? "true" : undefined}
         class={[
           "px-2 py-0.5 rounded text-muted-foreground hover:text-primary transition-colors",
-          code === lang ? "font-semibold text-primary bg-muted" : "",
+          code === lang ? "font-semibold text-[#0e6a6c]! bg-primary" : "",
         ].join(" ")}
       >
         {localeLabel[code]}
@@ -37,7 +37,10 @@ function localeHref(code: string, currentPath: string): string {
 
 <script is:inline>
   document.addEventListener("click", function (event) {
-    var target = (event.target as HTMLElement | null)?.closest("[data-setlang]");
+    var target = event.target;
+    while (target && target !== document && !target.getAttribute("data-setlang")) {
+      target = target.parentElement;
+    }
     if (!target) return;
     var code = target.getAttribute("data-setlang");
     if (code) {

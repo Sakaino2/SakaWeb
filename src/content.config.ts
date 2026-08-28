@@ -40,7 +40,42 @@ const designProjectsCollection = defineCollection({
   }),
 });
 
+const experienceCollection = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/data/experience",
+  }),
+  schema: z.object({
+    title: z.string(),
+    organization: z.string(),
+    lang: z.enum(["es", "en"]).default("es"),
+    dateStart: z.date(),
+    dateEnd: z.date().optional(),
+    description: z.string(),
+    stack: z.array(z.string()).default([]),
+    order: z.number(),
+  }),
+});
+
+const educationCollection = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/data/education",
+  }),
+  schema: z.object({
+    title: z.string(),
+    institution: z.string(),
+    lang: z.enum(["es", "en"]).default("es"),
+    dateStart: z.date(),
+    dateEnd: z.date().optional(),
+    description: z.string().optional(),
+    order: z.number(),
+  }),
+});
+
 export const collections = {
   "dev-projects": devProjectsCollection,
   "design-projects": designProjectsCollection,
+  experience: experienceCollection,
+  education: educationCollection,
 };

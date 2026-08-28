@@ -1,0 +1,61 @@
+---
+import Container from "../general/Container.astro";
+import { getCollection } from "astro:content";
+import { CareerSection } from "./CareerSection";
+import { t } from "@/i18n";
+import type { Locale } from "@/i18n";
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+
+const locale = lang === "es" ? "es-PE" : "en-US";
+
+function formatRange(start: Date, end?: Date): string {
+  const formatter = new Intl.DateTimeFormat(locale, {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+  const startStr = formatter.format(start);
+  if (!end) return `${startStr} — ${t(lang, "experience.present")}`;
+  return `${startStr} — ${formatter.format(end)}`;
+}
+
+const allExperience = await getCollection("experience");
+const experienceEntries = allExperience
+  .filter((entry) => entry.data.lang === lang)
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((entry) => ({
+    id: entry.id,
+    title: entry.data.title,
+    organization: entry.data.organization,
+    dateRange: formatRange(entry.data.dateStart, entry.data.dateEnd),
+    description: entry.data.description,
+    stack: entry.data.stack,
+  }));
+
+const allEducation = await getCollection("education");
+const educationEntries = allEducation
+  .filter((entry) => entry.data.lang === lang)
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((entry) => ({
+    id: entry.id,
+    title: entry.data.title,
+    institution: entry.data.institution,
+    dateRange: formatRange(entry.data.dateStart, entry.data.dateEnd),
+    description: entry.data.description,
+  }));
+---
+
+<Container className="py-8 md:py-16">
+  <CareerSection
+    experienceTitle={t(lang, "experience.section")}
+    roleAt={t(lang, "experience.roleAt")}
+    experienceEntries={experienceEntries}
+    educationTitle={t(lang, "education.section")}
+    educationEntries={educationEntries}
+    client:load
+  />
+</Container>
