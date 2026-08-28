@@ -12,12 +12,15 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { SkillBadge } from "./SkillBadge";
+import { t } from "@/i18n";
+import type { Locale } from "@/i18n";
 
 interface Props {
   project: CollectionEntry<"design-projects">;
+  lang: Locale;
 }
 
-const { project } = Astro.props;
+const { project, lang } = Astro.props;
 ---
 
 <Card className="gap-4">
@@ -25,9 +28,9 @@ const { project } = Astro.props;
     <CardTitle>{project.data.title}</CardTitle>
     <CardDescription> {project.data.description}</CardDescription>
     <CardAction>
-      <a href={`/design/${project.id}`}>
+      <a href={`/${lang}/design/${project.id}`}>
         <Button className="cursor-pointer" variant="default">
-          Ver Proyecto
+          {t(lang, "projectCard.view")}
         </Button>
       </a>
     </CardAction>
@@ -36,7 +39,7 @@ const { project } = Astro.props;
     <div class="flex flex-wrap gap-2 mb-4">
       {project.data.software.map((label) => <SkillBadge label={label} />)}
     </div>
-    <a class="flex items-center justify-center" href={`/design/${project.id}`}>
+    <a class="flex items-center justify-center" href={`/${lang}/design/${project.id}`}>
       <img
         class="rounded-lg object-cover max-h-48"
         src={project.data.thumbnail}

@@ -1,0 +1,16 @@
+<script is:inline>
+  (function () {
+    var saved = null;
+    try {
+      saved = localStorage.getItem("lang");
+    } catch (e) {}
+    if (saved === "en" || saved === "es") {
+      var path = window.location.pathname;
+      var isDefaultLanding = path === "/" || path === "/es" || path === "/es/";
+      if (isDefaultLanding && saved === "en") {
+        var rest = path.replace(/^\/(es)?\/?/, "");
+        window.location.replace("/en" + (rest ? "/" + rest : "/"));
+      }
+    }
+  })();
+</script>

@@ -10,6 +10,7 @@ const devProjectsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    lang: z.enum(["es", "en"]).default("es"),
     technologies: z.array(z.string()),
     githubUrl: z.url().optional(),
     liveUrl: z.url().optional(),
@@ -28,6 +29,7 @@ const designProjectsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    lang: z.enum(["es", "en"]).default("es"),
     software: z.array(z.string()),
     link: z.url().optional(),
     thumbnail: z.string(),

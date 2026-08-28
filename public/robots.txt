@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sakadev.oinc-studios.dev/sitemap-index.xml

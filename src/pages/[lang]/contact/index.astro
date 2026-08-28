@@ -1,19 +1,34 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { ContactForm } from "../../components/contact/ContactForm.tsx";
-import Container from "../../components/general/Container.astro";
+import Layout from "../../../layouts/Layout.astro";
+import { ContactForm } from "../../../components/contact/ContactForm.tsx";
+import Container from "../../../components/general/Container.astro";
 import { FaLinkedin, FaBehanceSquare } from "react-icons/fa";
+import { defaultLocale, isLocale, t } from "@/i18n";
+import type { Locale } from "@/i18n";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "es" } },
+    { params: { lang: "en" } },
+  ];
+}
+
+const lang = isLocale(Astro.params.lang as string)
+  ? (Astro.params.lang as Locale)
+  : defaultLocale;
 ---
 
-<Layout title="Contact Me">
+<Layout
+  title={t(lang, "contact.metaTitle")}
+  description={t(lang, "contact.metaDescription")}
+  lang={lang}
+>
   <Container className="py-16">
     <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
       <div class="flex flex-col gap-6">
-        <h1 class="text-4xl font-bold tracking-tight">Contáctame</h1>
-        <p class="text-lg text-gray-600 text-justify">
-          Siempre estoy abierto a nuevas oportunidades y colaboraciones
-          ¡Siéntete libre de mandarme un mensaje para discutir alguno de tus
-          proyectos!
+        <h1 class="text-4xl font-bold tracking-tight">{t(lang, "contact.title")}</h1>
+        <p class="text-lg text-muted-foreground text-justify">
+          {t(lang, "contact.message")}
         </p>
         <div class="flex gap-4 mt-4">
           <a
@@ -39,8 +54,8 @@ import { FaLinkedin, FaBehanceSquare } from "react-icons/fa";
         </div>
       </div>
       <div>
-        <h2 class="text-2xl font-semibold mb-4">Enviar mensaje</h2>
-        <ContactForm client:load />
+        <h2 class="text-2xl font-semibold mb-4">{t(lang, "contact.formTitle")}</h2>
+        <ContactForm lang={lang} client:load />
       </div>
     </div>
   </Container>

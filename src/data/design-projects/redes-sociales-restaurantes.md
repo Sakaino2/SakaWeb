@@ -2,7 +2,6 @@
 title: "Redes Sociales - Restaurantes"
 description: "Diseño de piezas gráficas para redes sociales para restaurantes"
 software: ["Photoshop", "Illustrator"]
-link: "https://github.com/your-username/my-awesome-app"
 thumbnail: "/projects/design/redes-sociales-restaurantes/hanzo-1.webp"
 media:
   - "/projects/design/redes-sociales-restaurantes/hanzo-1.webp"

@@ -2,6 +2,19 @@
 import Container from "../general/Container.astro";
 import SectionTitle from "../general/SectionTitle.astro";
 import { Button } from "../ui/button";
+import { t } from "@/i18n";
+import type { Locale } from "@/i18n";
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+
+const cvFiles: Record<Locale, string | null> = {
+  es: "/about/cv-es.pdf",
+  en: null, // English CV pending; will be set to "/about/cv-en.pdf"
+};
+const cvHref = cvFiles[lang];
 ---
 
 <Container className="py-16">
@@ -11,26 +24,24 @@ import { Button } from "../ui/button";
     <div class="shrink-0">
       <img
         src="/about/cv-photo.webp"
-        alt="A professional headshot of Jorge Sakaino"
+        alt={t(lang, "about.alt")}
         class="w-48 h-48 md:w-64 md:h-64 rounded-2xl object-cover shadow-lg"
       />
     </div>
 
     <div class="text-justify">
       <div class="flex justify-between">
-        <SectionTitle>Sobre mi</SectionTitle>
-        <a href="/about/cv-es.pdf" download>
-          <Button className="cursor-pointer" client:load>Descargar CV</Button>
-        </a>
+        <SectionTitle>{t(lang, "about.title")}</SectionTitle>
+        {
+          cvHref && (
+            <a href={cvHref} download>
+              <Button className="cursor-pointer" client:load>{t(lang, "about.downloadCv")}</Button>
+            </a>
+          )
+        }
       </div>
       <p class="mt-4 text-xl text-gray-500 dark:text-gray-400">
-        Soy un apasionado desarrollador full-stack web y mobile y busco crear
-        experiencias digitales intuitivas. Mi carrera en la tecnología está
-        complementada por una base sólida en mi experiencia de diseño gráfico.
-        Lo que me permite crear un puente entre la funcionalidad y lo estético.
-        Siempre busco la mejor manera de crear soluciones y siempre estoy
-        dispuesto a aprender nuevas tecnologías para resolver problemas de una
-        manera innovadora.
+        {t(lang, "about.bio")}
       </p>
     </div>
   </div>

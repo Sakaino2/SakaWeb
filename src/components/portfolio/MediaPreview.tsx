@@ -2,6 +2,9 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { getEmbedUrl, isYouTube } from "@/lib/utils";
+import { t } from "@/i18n";
+import type { Locale } from "@/i18n";
+import { useLocale } from "@/i18n/useLocale";
 
 interface MediaDialogProps {
   mediaFiles: string[];
@@ -9,6 +12,7 @@ interface MediaDialogProps {
   selectIndex: (index: number) => void;
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  lang: Locale;
 }
 
 export function MediaDialog({
@@ -17,7 +21,9 @@ export function MediaDialog({
   selectIndex,
   open,
   onOpenChange,
+  lang: initialLang,
 }: MediaDialogProps) {
+  const lang = useLocale(initialLang);
   const currentUrl = mediaFiles[index];
 
   const handleNext = () => {
@@ -60,7 +66,7 @@ export function MediaDialog({
           {!isYouTube(currentUrl) && (
             <img
               src={currentUrl}
-              alt={`Media ${index + 1}`}
+              alt={`${t(lang, "media.media")} ${index + 1}`}
               className="w-full h-auto object-contain max-h-[80vh] rounded-lg"
             />
           )}

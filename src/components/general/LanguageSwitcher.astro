@@ -1,0 +1,49 @@
+---
+interface Props {
+  lang: "es" | "en";
+  pathname: string;
+}
+
+const { lang, pathname } = Astro.props;
+
+const localeLabel: Record<string, string> = {
+  es: "ES",
+  en: "EN",
+};
+
+function localeHref(code: string, currentPath: string): string {
+  const rest = currentPath.replace(/^\/(es|en)(\/|$)/, "");
+  return `/${code}${rest.startsWith("/") ? rest : "/" + rest}`;
+}
+---
+
+<div class="flex items-center rounded-md border border-border px-1 py-0.5 text-sm">
+  {
+    ["es", "en"].map((code) => (
+      <a
+        href={localeHref(code, pathname)}
+        data-setlang={code}
+        aria-current={code === lang ? "true" : undefined}
+        class={[
+          "px-2 py-0.5 rounded text-muted-foreground hover:text-primary transition-colors",
+          code === lang ? "font-semibold text-primary bg-muted" : "",
+        ].join(" ")}
+      >
+        {localeLabel[code]}
+      </a>
+    ))
+  }
+</div>
+
+<script is:inline>
+  document.addEventListener("click", function (event) {
+    var target = (event.target as HTMLElement | null)?.closest("[data-setlang]");
+    if (!target) return;
+    var code = target.getAttribute("data-setlang");
+    if (code) {
+      try {
+        localStorage.setItem("lang", code);
+      } catch (e) {}
+    }
+  });
+</script>
