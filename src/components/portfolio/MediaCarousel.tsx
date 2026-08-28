@@ -8,12 +8,17 @@ import {
 } from "../ui/carousel";
 import { MediaDialog } from "./MediaPreview";
 import { getVideoThumbnail, isYouTube } from "@/lib/utils";
+import { t } from "@/i18n";
+import type { Locale } from "@/i18n";
+import { useLocale } from "@/i18n/useLocale";
 
 interface Props {
   media: string[];
+  lang: Locale;
 }
 
-export function MediaCarousel({ media }: Props) {
+export function MediaCarousel({ media, lang: initialLang }: Props) {
+  const lang = useLocale(initialLang);
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -40,7 +45,7 @@ export function MediaCarousel({ media }: Props) {
                     {getVideoThumbnail(url) ? (
                       <img
                         src={getVideoThumbnail(url)}
-                        alt="Video Preview"
+                        alt={t(lang, "media.videoPreview")}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     ) : (
@@ -58,7 +63,7 @@ export function MediaCarousel({ media }: Props) {
                 {!isYouTube(url) && (
                   <img
                     src={url}
-                    alt={`Project image ${index + 1}`}
+                    alt={`${t(lang, "media.projectImage")} ${index + 1}`}
                     className="rounded-md object-cover w-full h-44 cursor-pointer"
                     onClick={() => handleOpenDialog(index)}
                   />
@@ -77,6 +82,7 @@ export function MediaCarousel({ media }: Props) {
         mediaFiles={media}
         open={open}
         onOpenChange={setOpen}
+        lang={lang}
       />
     </div>
   );

@@ -1,0 +1,32 @@
+---
+/**
+ * Inline theme script. Applies the saved/preferred theme before first paint
+ * and re-applies it after every Astro view-transition page swap so the theme
+ * stays global across client-side navigation (the <head> is swapped but the
+ * <html> class must be re-applied).
+ */
+---
+
+<script is:inline>
+  (function () {
+    function applyTheme() {
+      var stored = null;
+      try {
+        stored = localStorage.getItem("theme");
+      } catch (e) {
+        /* ignore */
+      }
+      var prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var dark = stored ? stored === "dark" : prefersDark;
+      document.documentElement.classList.toggle("dark", dark);
+    }
+
+    applyTheme();
+
+    if (document.addEventListener) {
+      document.addEventListener("astro:after-swap", applyTheme);
+    }
+  })();
+</script>

@@ -2,7 +2,6 @@
 title: "Branding - Tres Colinas"
 description: "Branding para una pequeña empresa de venta de productos agrícolas orgánicos"
 software: ["Illustrator"]
-link: "https://github.com/your-username/my-awesome-app"
 thumbnail: "/projects/design/branding-tres-colinas/tres-colinas-logo.webp"
 media:
   - "/projects/design/branding-tres-colinas/tres-colinas-logo.webp"

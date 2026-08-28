@@ -2,8 +2,6 @@
 title: "Mobile - InventariApp"
 description: "Interfaz mobile para uso de inventariadores para aplicación de registro de inventario anual para instituciones públicas"
 technologies: ["Flutter", "Dart"]
-githubUrl: "https://github.com/your-username/my-awesome-app"
-liveUrl: "https://my-awesome-app.vercel.app"
 thumbnail: "/projects/dev/mobile-inventariapp/login.webp"
 media:
   - "/projects/dev/mobile-inventariapp/login.webp"

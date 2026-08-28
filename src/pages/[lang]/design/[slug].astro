@@ -1,21 +1,27 @@
 ---
 import { getCollection, render } from "astro:content";
-import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import ProjectLayout from "../../../layouts/ProjectLayout.astro";
 import { MediaCarousel } from "@/components/portfolio/MediaCarousel";
 import Prose from "@/components/general/Prose.astro";
 import type { DesignProject } from "@/models/collections.model";
+import type { Locale } from "@/i18n";
 
 export async function getStaticPaths() {
   const allDesignProjects: DesignProject[] =
     await getCollection("design-projects");
 
-  return allDesignProjects.map((project) => ({
-    params: { slug: project.id },
-    props: { project },
-  }));
+  return ["es", "en"].flatMap((lang) =>
+    allDesignProjects
+      .filter((project) => project.data.lang === lang)
+      .map((project) => ({
+        params: { lang, slug: project.id },
+        props: { project },
+      })),
+  );
 }
 
-const { project } = Astro.props;
+const { project } = Astro.props as { project: DesignProject };
+const lang = project.data.lang as Locale;
 const { Content } = await render(project);
 ---
 
@@ -25,7 +31,7 @@ const { Content } = await render(project);
   </Prose>
   {
     project.data.media && (
-      <MediaCarousel media={project.data.media} client:load />
+      <MediaCarousel media={project.data.media} lang={lang} client:load />
     )
   }
 </ProjectLayout>

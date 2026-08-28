@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import DevelopmentProjectCard from "../../../components/portfolio/DevelopmentProjectCard.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Container from "@/components/general/Container.astro";
+import SectionTitle from "@/components/general/SectionTitle.astro";
+import type { DevProject } from "@/models/collections.model";
+import { filterDevProjects } from "@/utils/utils";
+import { defaultLocale, isLocale, t } from "@/i18n";
+import type { Locale } from "@/i18n";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "es" } },
+    { params: { lang: "en" } },
+  ];
+}
+
+const lang = isLocale(Astro.params.lang as string)
+  ? (Astro.params.lang as Locale)
+  : defaultLocale;
+
+const allDevProjects: DevProject[] = await getCollection("dev-projects");
+const filteredDevProjects = filterDevProjects(allDevProjects, lang);
+filteredDevProjects.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<Layout title={t(lang, "development.metaTitle")} description={t(lang, "development.metaDescription")} lang={lang}>
+  <Container className="py-16">
+    <SectionTitle>{t(lang, "development.sectionTitle")}</SectionTitle>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      {
+        filteredDevProjects.map((project) => (
+          <DevelopmentProjectCard project={project} lang={lang} />
+        ))
+      }
+    </div>
+  </Container>
+</Layout>

@@ -5,30 +5,77 @@ import type { CollectionEntry } from "astro:content";
 import { BackButton } from "@/components/portfolio/BackButton";
 import Header from "@/components/general/Header.astro";
 import Footer from "@/components/general/Footer.astro";
+import ThemeScript from "@/components/general/ThemeScript.astro";
+import LangScript from "@/components/general/LangScript.astro";
 import Container from "@/components/general/Container.astro";
 import SectionTitle from "@/components/general/SectionTitle.astro";
 import { Font } from "astro:assets";
+import { defaultLocale, normalizeLocale, ogLocaleFor, t, type UIKey } from "@/i18n";
+import type { Locale } from "@/i18n";
 
 interface Props {
   project: CollectionEntry<"dev-projects"> | CollectionEntry<"design-projects">;
 }
 const { project } = Astro.props;
+const SITE_URL = Astro.url.origin;
+
+const locale: Locale = normalizeLocale(project.data.lang ?? Astro.currentLocale);
+const t_ = (key: UIKey) => t(locale, key);
+
+const pathname = Astro.url.pathname;
+const alternateCodes = ["es", "en"].filter((c) => c !== locale);
+
+function localeHref(code: string, currentPath: string): string {
+  const rest = currentPath.replace(/^\/(es|en)(\/|$)/, "");
+  return `/${code}${rest.startsWith("/") ? rest : "/" + rest}`;
+}
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/logos/logo-icon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{project.data.title}</title>
+    <meta name="description" content={project.data.description} />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Sakaweb" />
+    <meta property="og:title" content={project.data.title} />
+    <meta property="og:description" content={project.data.description} />
+    <meta property="og:image" content={`${SITE_URL}${project.data.thumbnail}`} />
+    <meta property="og:locale" content={ogLocaleFor(locale)} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={project.data.title} />
+    <meta name="twitter:description" content={project.data.description} />
+    <meta name="twitter:image" content={`${SITE_URL}${project.data.thumbnail}`} />
+
+    <link rel="canonical" href={Astro.url} />
+    {
+      alternateCodes.map((code) => (
+        <link rel="alternate" hreflang={code} href={localeHref(code, pathname)} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={localeHref(defaultLocale, pathname)} />
+
+    <ThemeScript />
+    <LangScript />
+
     <Font cssVariable="--font-outfit" preload />
     <ClientRouter />
   </head>
   <body>
-    <Header />
-    <main>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md"
+    >
+      {t_("skipToContent")}
+    </a>
+    <Header lang={locale} />
+    <main id="main-content">
       <section
         class="relative w-full h-96 flex items-center justify-center overflow-hidden"
       >
@@ -48,11 +95,19 @@ const { project } = Astro.props;
           <SectionTitle>
             {project.data.title}
           </SectionTitle>
-          <BackButton client:load />
+          <BackButton
+            lang={locale}
+            fallbackHref={
+              project.collection === "dev-projects"
+                ? `/${locale}/development`
+                : `/${locale}/design`
+            }
+            client:load
+          />
         </div>
         <slot />
       </Container>
     </main>
-    <Footer />
+    <Footer lang={locale} />
   </body>
 </html>

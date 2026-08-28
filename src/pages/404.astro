@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import { defaultLocale, isLocale, normalizeLocale, t } from "@/i18n";
+import type { Locale } from "@/i18n";
+
+const pathLocale = isLocale(Astro.url.pathname.split("/")[1])
+  ? (Astro.url.pathname.split("/")[1] as Locale)
+  : undefined;
+const locale: Locale = normalizeLocale(pathLocale ?? Astro.currentLocale);
+const homeHref = locale === defaultLocale ? `/es` : `/${locale}`;
+---
+
+<Layout
+  title={t(locale, "notFound.metaTitle")}
+  description={t(locale, "notFound.metaDescription")}
+  lang={locale}
+>
+  <div class="flex flex-col items-center justify-center gap-6 py-32 text-center">
+    <h1 class="text-6xl font-bold tracking-tight text-primary">404</h1>
+    <p class="text-lg text-muted-foreground">{t(locale, "notFound.body")}</p>
+    <a href={homeHref}>
+      <Button variant="secondary" size="lg" className="cursor-pointer">
+        {t(locale, "notFound.home")}
+      </Button>
+    </a>
+  </div>
+</Layout>

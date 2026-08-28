@@ -28,29 +28,51 @@ import {
   TbBrandAdobePremier,
 } from "react-icons/tb";
 import AutoScroll from "embla-carousel-auto-scroll";
+import { useEffect, useState } from "react";
+import { t } from "@/i18n";
+import type { Locale } from "@/i18n";
+import { useLocale } from "@/i18n/useLocale";
 
-export function SkillsCarousel() {
+interface SkillsCarouselProps {
+  lang: Locale;
+}
+
+export function SkillsCarousel({ lang: initialLang }: SkillsCarouselProps) {
+  const lang = useLocale(initialLang);
+  const [autoScroll, setAutoScroll] = useState(true);
+  const [activeTab, setActiveTab] = useState("dev");
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setAutoScroll(!mq.matches);
+    const handler = (e: MediaQueryListEvent) => setAutoScroll(!e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
   return (
-    <Tabs defaultValue="dev" className="w-full">
-      <TabsContent value="dev">
-        <div className="flex flex-col sm:flex-row justify-between">
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl dark:text-gray-100">
-            Lenguajes / Herramientas
-          </h2>
-          <div className="flex mt-3 lg:mt-2 ml-auto lg:ml-0 items-end">
-            <TabsList>
-              <TabsTrigger value="dev">Desarrollo</TabsTrigger>
-              <TabsTrigger value="design">Diseño</TabsTrigger>
-            </TabsList>
-          </div>
+    <Tabs defaultValue="dev" onValueChange={setActiveTab} className="w-full">
+      <div className="flex flex-col sm:flex-row justify-between">
+        <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl dark:text-gray-100">
+          {activeTab === "dev"
+            ? t(lang, "skills.dev.section")
+            : t(lang, "skills.design.section")}
+        </h2>
+        <div className="flex mt-3 lg:mt-2 ml-auto lg:ml-0 items-end">
+          <TabsList>
+            <TabsTrigger value="dev">{t(lang, "skills.tab.dev")}</TabsTrigger>
+            <TabsTrigger value="design">{t(lang, "skills.tab.design")}</TabsTrigger>
+          </TabsList>
         </div>
+      </div>
+      <TabsContent value="dev">
         <div className="flex mt-4 justify-center items-center">
           <Carousel
             className="w-full sm:max-w-[75vw] items-center justify-center"
             opts={{ loop: true }}
             plugins={[
               AutoScroll({
-                active: true,
+                active: autoScroll,
                 speed: 1,
                 stopOnInteraction: false,
               }),
@@ -72,24 +94,13 @@ export function SkillsCarousel() {
         </div>
       </TabsContent>
       <TabsContent value="design">
-        <div className="flex flex-col sm:flex-row justify-between">
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl dark:text-gray-100">
-            Programas / Herramientas
-          </h2>
-          <div className="flex mt-3 lg:mt-2 ml-auto lg:ml-0 items-end">
-            <TabsList>
-              <TabsTrigger value="dev">Desarrollo</TabsTrigger>
-              <TabsTrigger value="design">Diseño</TabsTrigger>
-            </TabsList>
-          </div>
-        </div>
         <div className="flex mt-4 justify-center items-center">
           <Carousel
             className="w-full sm:max-w-[75vw] items-center justify-center"
             opts={{ loop: true }}
             plugins={[
               AutoScroll({
-                active: true,
+                active: autoScroll,
                 speed: 1,
                 stopOnInteraction: false,
               }),

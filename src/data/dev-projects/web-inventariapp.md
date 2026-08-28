@@ -2,8 +2,6 @@
 title: "Web - InventariApp"
 description: "Interfaz web para aplicación de registro de inventario anual para instituciones públicas"
 technologies: ["TypeScript", "Astro", "React", "Tailwind CSS"]
-githubUrl: "https://github.com/your-username/my-awesome-app"
-liveUrl: "https://my-awesome-app.vercel.app"
 thumbnail: "/projects/dev/frontend-inventariapp/log-in.webp"
 media:
   - "/projects/dev/frontend-inventariapp/log-in.webp"

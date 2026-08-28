@@ -1,6 +1,7 @@
 ---
-title: "Fotografía Gastronómica"
-description: "Proyectos de fotografía gastronómica"
+title: "Food Photography"
+description: "Food photography projects"
+lang: "en"
 software: ["Photoshop", "Lightroom"]
 thumbnail: "/projects/design/fotografia-gastronomica/portafolio-10.webp"
 media:
@@ -23,20 +24,20 @@ date: 2022-08-21
 show: true
 ---
 
-## Resumen del Proyecto
+## Project Summary
 
-Fotografías tomadas durante mi trabajo en Wasabi S.A.C.
+Photographs taken during my work at Wasabi S.A.C.
 
-### Características
+### Features
 
-- Fotografía profesional
-- Trabajo de iluminación
-- Composición llamativa
+- Professional photography.
+- Lighting work.
+- Eye-catching composition.
 
-### Proceso del proyecto
+### Project Process
 
-Se tomaron referencias de internet para buscar inspiración para la fotografía de los platos y resaltar el trabajo de los chefs.
+Internet references were used for inspiration for the dish photography to highlight the chefs' work.
 
-### Aprendizajes
+### Learnings
 
-Reforcé mis habilidades de composición y manejo de iluminación, además de las habilidades de comunicación para coordinar las sesiones y manejar un acabado diferente para cada restaurante.
+I strengthened my composition and lighting management skills, as well as communication skills to coordinate the sessions and deliver a different finish for each restaurant.

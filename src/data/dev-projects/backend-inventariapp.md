@@ -2,8 +2,6 @@
 title: "Backend - InventariApp"
 description: "Aplicación REST de registro de inventario anual para instituciones públicas"
 technologies: ["Golang", "PostgreSQL"]
-githubUrl: "https://github.com/your-username/my-awesome-app"
-liveUrl: "https://my-awesome-app.vercel.app"
 thumbnail: "/projects/dev/backend-inventariapp/login.webp"
 media:
   - "/projects/dev/backend-inventariapp/login.webp"

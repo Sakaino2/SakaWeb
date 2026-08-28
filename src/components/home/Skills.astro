@@ -1,8 +1,14 @@
 ---
 import Container from "../general/Container.astro";
 import { SkillsCarousel } from "./SkillsCarousel";
+import type { Locale } from "@/i18n";
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
 ---
 
 <Container className="py-16">
-  <SkillsCarousel client:load />
+  <SkillsCarousel lang={lang} client:load />
 </Container>

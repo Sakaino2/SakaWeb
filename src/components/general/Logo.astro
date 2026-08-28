@@ -1,0 +1,28 @@
+---
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+
+interface Props {
+  src: string;
+  class?: string;
+}
+
+const { src, class: className } = Astro.props;
+
+const filePath = fileURLToPath(new URL(`../../../public${src}`, import.meta.url));
+const raw = readFileSync(filePath, "utf-8");
+
+const viewBox = raw.match(/viewBox="([^"]+)"/)?.[1] ?? "0 0 100 100";
+
+const inner = raw
+  .replace(/<\?xml[^?]*\?>/g, "")
+  .replace(/^<svg[^>]*>/i, "")
+  .replace(/<\/svg>\s*$/i, "");
+---
+
+<svg
+  viewBox={viewBox}
+  class={className}
+  set:html={inner}
+  aria-hidden="true"
+/>

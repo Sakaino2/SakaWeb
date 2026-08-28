@@ -2,8 +2,7 @@
 title: "Web - Portafolio"
 description: "Portafolio web responsivo en el que se muestran proyectos realizados"
 technologies: ["React", "Astro", "Tailwind"]
-githubUrl: "https://github.com/your-username/my-awesome-app"
-liveUrl: "https://sakadev.oinc-games.com/"
+liveUrl: "https://sakadev.oinc-studios.dev/"
 thumbnail: "/projects/dev/web-portfolio/project-cards.webp"
 media:
   - "/projects/dev/web-portfolio/home.webp"
