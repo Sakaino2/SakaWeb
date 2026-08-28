@@ -11,8 +11,8 @@ interface Props {
 const { lang } = Astro.props;
 
 const cvFiles: Record<Locale, string | null> = {
-  es: "/about/cv-es.pdf",
-  en: null, // English CV pending; will be set to "/about/cv-en.pdf"
+  es: "/about/Jorge-Sakaino-Dev-CV-ES.pdf",
+  en: "/about/Jorge-Sakaino-Dev-CV-EN.pdf",
 };
 const cvHref = cvFiles[lang];
 ---
