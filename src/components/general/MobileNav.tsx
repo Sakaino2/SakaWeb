@@ -44,7 +44,7 @@ export function MobileNav({ lang: initialLang }: MobileNavProps) {
         <SheetHeader></SheetHeader>
         <NavigationMenu
           orientation="vertical"
-          className="text-primary mx-auto sm:ml-20 items-start"
+          className="text-foreground mx-auto sm:ml-20 items-start"
         >
           <NavigationMenuList className="bg-background flex flex-col gap-4 sm:items-start w-full">
             {items.map((item) => (

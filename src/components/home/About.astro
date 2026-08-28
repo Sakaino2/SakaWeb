@@ -11,13 +11,13 @@ interface Props {
 const { lang } = Astro.props;
 
 const cvFiles: Record<Locale, string | null> = {
-  es: "/about/cv-es.pdf",
-  en: null, // English CV pending; will be set to "/about/cv-en.pdf"
+  es: "/about/Jorge-Sakaino-Dev-CV-ES.pdf",
+  en: "/about/Jorge-Sakaino-Dev-CV-EN.pdf",
 };
 const cvHref = cvFiles[lang];
 ---
 
-<Container className="py-16">
+<Container className="py-8 md:py-16">
   <div
     class="flex flex-col md:flex-row items-center md:items-start gap-8 w-full mx-auto"
   >
@@ -35,7 +35,9 @@ const cvHref = cvFiles[lang];
         {
           cvHref && (
             <a href={cvHref} download>
-              <Button className="cursor-pointer" client:load>{t(lang, "about.downloadCv")}</Button>
+              <Button className="cursor-pointer" client:load>
+                {t(lang, "about.downloadCv")}
+              </Button>
             </a>
           )
         }
