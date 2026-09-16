@@ -7,8 +7,11 @@ import mdx from "@astrojs/mdx";
 
 import sitemap from "@astrojs/sitemap";
 
+import netlify from "@astrojs/netlify";
+
 export default defineConfig({
   site: "https://sakadev.oinc-studios.dev",
+  compressHTML: true,
   i18n: {
     defaultLocale: "es",
     locales: ["es", "en"],
@@ -20,6 +23,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [react(), mdx(), sitemap()],
+  adapter: netlify(),
   fonts: [
     {
       provider: fontProviders.fontsource(),
